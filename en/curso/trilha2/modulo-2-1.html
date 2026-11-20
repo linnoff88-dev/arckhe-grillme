@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="grillme" name="inema-course"/>
+<title>Module 2.1 · Anatomy of a relentless interview | Grill Me</title>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "grillme",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos", "modules": [
+        { "id": "1-1", "title": "Por que extrair contexto é o jogo todo", "topics": 8, "href": "curso/trilha1/modulo-1-1.html" }
+      ]},
+      { "n": "2", "title": "As Técnicas", "modules": [
+        { "id": "2-1", "title": "Anatomia de uma entrevista relentless", "topics": 8, "href": "curso/trilha2/modulo-2-1.html" }
+      ]},
+      { "n": "3", "title": "O Skill", "modules": [
+        { "id": "3-1", "title": "Anatomia do SKILL.md do grill-me", "topics": 8, "href": "curso/trilha3/modulo-3-1.html" }
+      ]},
+      { "n": "4", "title": "Avançado", "modules": [
+        { "id": "4-1", "title": "Aplicando o grill-me de verdade", "topics": 8, "href": "curso/trilha4/modulo-4-1.html" }
+      ]}
+    ]
+  }
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='inema-dark'; }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark:true,  attr:null,        cs:'dark'  },
+        'claro':      { dark:false, attr:null,        cs:'light' },
+        'sepia':      { dark:false, attr:'sepia',     cs:'light' },
+        'foco':       { dark:null,  attr:'foco',      cs:null    },
+        'contraste':  { dark:true,  attr:'contraste', cs:'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'emerald');
+      var s = html.style, scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale/100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
+        : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald:[152,76,45], blue:[217,91,60], purple:[258,90,66], amber:[38,92,50], teal:[174,72,41], rose:[350,89,60] };
+      var a = ACC[p.accent] || ACC.emerald;
+      s.setProperty('--accent-h', a[0]+''); s.setProperty('--accent-s', a[1]+'%'); s.setProperty('--accent-l', a[2]+'%');
+      s.setProperty('--accent', 'hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)');
+    } catch (err) { try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme='dark'; } catch(e){} }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
+      primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+    } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    [id^="topico-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,0.12); }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,0.25); }
+    html:not(.dark) .hover\:bg-blue-500\/30:hover { background-color: rgba(37,99,235,0.18); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .bg-blue-900\/20 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) .hover\:text-amber-400:hover { color: #92400e; }
+    html:not(.dark) .hover\:bg-amber-500\/10:hover { background-color: rgba(217,119,6,0.08); }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-900\/20 { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+    html:not(.dark) .bg-red-900\/20 { background-color: rgba(185,28,28,0.07); }
+    html:not(.dark) .border-red-500\/30 { border-color: rgba(185,28,28,0.25); }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/30 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .text-red-400 { color: #b91c1c; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    .inema-toc-link.is-active { color: #60a5fa; font-weight: 600; }
+    html:not(.dark) .inema-toc-link.is-active { color: #2563eb; }
+  </style>
+<link href="https://inematds.github.io/grillme/curso/trilha2/modulo-2-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/grillme/en/curso/trilha2/modulo-2-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/grillme/es/curso/trilha2/modulo-2-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-dark-800 focus:rounded-lg" href="#conteudo">Skip to content</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🔥</span><span class="font-bold text-lg hidden sm:inline">Grill Me</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentals</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Techniques</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">The Skill</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Advanced</span></a>
+<button class="inline-flex items-center gap-1.5 px-2 sm:px-3 py-1.5 rounded-lg text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors text-sm ml-1" data-inema-journey-open="" type="button"><span aria-hidden="true">◷</span><span class="hidden sm:inline">Journey</span><span aria-hidden="true" class="inema-journey-badge hidden"></span></button>
+<button aria-label="Switch topics" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Navigation path" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-blue-400" href="../../index.html">Start</a><span>/</span>
+<a class="hover:text-blue-400" href="index.html">Track 2</a><span>/</span>
+<span class="text-blue-400">Module 2.1</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MODULE 2.1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🎤 Anatomy of a relentless interview</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">How the method works. Each technique exists to get the most out of the process without leaving gaps—and to ensure the capture file is coherent when finished.</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">8</div><div class="text-xs text-neutral-400">Topics</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~45</div><div class="text-xs text-neutral-400">Minutes</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Basic</div><div class="text-xs text-neutral-400">Level</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Method</div><div class="text-xs text-neutral-400">Type</div></div>
+</div>
+</div>
+</header>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[210px_1fr] lg:gap-10">
+<nav aria-label="Module index" class="hidden lg:block sticky top-24 self-start" data-inema-toc="">
+<p class="text-sm text-neutral-400 mb-3">Section <span class="inema-toc-pos">1</span> of <span class="inema-toc-total">8</span></p>
+<ul class="space-y-1.5 text-sm">
+<li><a class="inema-toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-1">1. One question at a time</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-2">2. Recommended answer</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-3">3. Dependencies</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-4">4. Explore first</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-5">5. Flags with an owner</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-6">6. Checkpoint</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-7">7. Backstop</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-blue-400 transition-colors" href="#topico-8">8. Reconcile</a></li>
+</ul>
+</nav>
+<main class="inema-prose min-w-0" id="conteudo">
+<!-- SEÇÃO 1 -->
+<section class="mb-16" data-inema-topic="modulo-2-1#topico-1" id="topico-1">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">1</span><h2 class="text-2xl font-bold">1️⃣ One question at a time</h2></div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-1-t1-p1">The first rule of the method is almost absurdly simple: <strong class="text-blue-400">one question per turn</strong>. The interviewer asks one question, waits for your response, and only then moves on. No dumping five numbered questions at once.</p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-4 mb-6">
+<p class="text-sm text-neutral-300"><span class="text-blue-400 font-semibold">Why does it matter?</span> Five questions at once force you to do mental triage, and one or two are almost always poorly answered or forgotten. One at a time keeps you focused on resolving <strong>a decision</strong> before opening the next one.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ In batches</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start gap-2"><span class="text-red-400">✗</span><span>"Answer 1, 2, 3, 4, and 5" — you overwhelm them.</span></li>
+<li class="flex items-start gap-2"><span class="text-red-400">✗</span><span>Shallow answers; something gets left behind.</span></li>
+<li class="flex items-start gap-2"><span class="text-red-400">✗</span><span>Impossible to adapt the next question to the previous one.</span></li>
+</ul>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Serial</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start gap-2"><span class="text-emerald-400">✓</span><span>One question, one answer, one checkpoint.</span></li>
+<li class="flex items-start gap-2"><span class="text-emerald-400">✓</span><span>The next question comes from the previous answer.</span></li>
+<li class="flex items-start gap-2"><span class="text-emerald-400">✓</span><span>A conversation with rhythm, not a form.</span></li>
+</ul>
+</div>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">1 per turn</div><p class="text-xs text-neutral-400">One question at a time.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Focus</div><p class="text-xs text-neutral-400">One decision at a time.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Adaptive</div><p class="text-xs text-neutral-400">The next one grows out of the previous one.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Pace</div><p class="text-xs text-neutral-400">Conversation, not a form.</p></div>
+</div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+</section>
+<!-- SEÇÃO 2 -->
+<section class="mb-16" data-inema-topic="modulo-2-1#topico-2" id="topico-2">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">2</span><h2 class="text-2xl font-bold">✅ Recommended answer</h2></div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-1-t2-p1">This is the technique that keeps the interview from becoming tiring: for each question, the interviewer <strong class="text-blue-400">already suggests the answer it recommends</strong> — the best guess based on context. You just need to <strong>confirm, correct, or redirect</strong>.</p>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">💡</span> Why it reduces friction</h3>
+<p class="text-neutral-300">Answering from scratch is exhausting. Reacting to a proposal is easy—"yes," "no, it's like this," or "actually, the point is something else." Even when the guess is wrong, it speeds things up: it gives you something concrete to react to.</p>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🔁</span> The three reactions</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• <strong>Confirm</strong> — "that’s right." The decision goes into the file.</li>
+<li>• <strong>Fix</strong> — "almost, but the right number is X." Fine-tuning.</li>
+<li>• <strong>Redirect</strong> — "that’s not the right question." It changes the direction.</li>
+</ul>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Suggestion</div><p class="text-xs text-neutral-400">Comes with a ready-made guess.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Low friction</div><p class="text-xs text-neutral-400">React &gt; create from scratch.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Best guess</div><p class="text-xs text-neutral-400">Inferred from context.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">3 reactions</div><p class="text-xs text-neutral-400">Confirms/corrects/redirects.</p></div>
+</div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+</section>
+<!-- SEÇÃO 3 -->
+<section class="mb-16" data-inema-topic="modulo-2-1#topico-3" id="topico-3">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">3</span><h2 class="text-2xl font-bold">🌳 Decision tree and dependencies</h2></div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-1-t3-p1">The interview isn’t a flat list of questions—it’s a <strong class="text-blue-400">tree</strong>. Some decisions depend on others. The rule: resolve the decision first <strong>upstream</strong> (the one above, which others depend on) and only then the decisions <strong>downstream</strong> (the ones that come after it).</p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-4 mb-6">
+<p class="text-sm text-neutral-300"><span class="text-blue-400 font-semibold">Upstream / downstream?</span> Think of a river: what is <strong>upstream</strong> (upstream) affects everything <strong>downstream</strong> (downstream). If you decide on a detail before the choice that governs it, you may have to redo it.</p>
+</div>
+<div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Dependency tree: the root decision is resolved first, unlocking the dependent decisions, which are traversed branch by branch until each leaf is decided or flagged" class="w-full h-auto" role="img" viewbox="0 0 1000 300">
+<defs>
+<lineargradient id="t2m-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
+<filter height="180%" id="t2m-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="36" id="t2m-grid" patternunits="userSpaceOnUse" width="36"><circle cx="1.3" cy="1.3" fill="#3b82f6" opacity="0.10" r="1.3"></circle></pattern>
+<marker id="t2m-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#60a5fa"></path></marker>
+</defs>
+<rect fill="url(#t2m-grid)" height="300" width="1000" x="0" y="0"></rect>
+<g fill="none" opacity="0.6" stroke="#60a5fa" stroke-width="1.8">
+<path d="M250,150 C360,150 360,80 470,80" marker-end="url(#t2m-ah)"></path>
+<path d="M250,150 C360,150 360,220 470,220" marker-end="url(#t2m-ah)"></path>
+<path d="M620,80 C720,80 720,50 820,50" marker-end="url(#t2m-ah)"></path>
+<path d="M620,80 C720,80 720,110 820,110" marker-end="url(#t2m-ah)"></path>
+<path d="M620,220 L820,220" marker-end="url(#t2m-ah)"></path>
+</g>
+<g filter="url(#t2m-glow)"><rect fill="#0e1622" height="64" rx="14" stroke="url(#t2m-grad)" stroke-width="2.5" width="200" x="50" y="118"></rect></g>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="16" font-weight="600" text-anchor="middle" x="150" y="146">root decision</text>
+<text fill="#cfe0ff" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="150" y="168">upstream — resolve first</text>
+<g font-family="Inter,sans-serif" font-size="13" font-weight="600">
+<g><rect fill="#0e1622" height="40" rx="10" stroke="#60a5fa" stroke-width="2" width="150" x="470" y="60"></rect><text fill="#cfe0ff" text-anchor="middle" x="545" y="85">depends on the root</text></g>
+<g><rect fill="#0e1622" height="40" rx="10" stroke="#60a5fa" stroke-width="2" width="150" x="470" y="200"></rect><text fill="#cfe0ff" text-anchor="middle" x="545" y="225">depends on the root</text></g>
+<g><rect fill="#0e1b26" height="36" rx="9" stroke="#38bdf8" stroke-width="2" width="150" x="820" y="32"></rect><text fill="#bfe6ff" text-anchor="middle" x="895" y="55">decided</text></g>
+<g><rect fill="#0e1b26" height="36" rx="9" stroke="#38bdf8" stroke-width="2" width="150" x="820" y="92"></rect><text fill="#bfe6ff" text-anchor="middle" x="895" y="115">decided</text></g>
+<g><rect fill="#0e1b26" height="36" rx="9" stroke="#38bdf8" stroke-width="2" width="150" x="820" y="202"></rect><text fill="#bfe6ff" text-anchor="middle" x="895" y="225">flag → owner</text></g>
+</g>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="500" y="285">resolving things out of order (leaf before root) creates rework</text>
+</svg>
+</div>
+<p class="text-sm text-neutral-400 mb-6">Follow the arrows: decide on the root at the left first to unlock the branches. Each leaf on the right ends as “decided” or becomes a flag—it never remains unresolved.</p>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Tree</div><p class="text-xs text-neutral-400">It’s not a flat list.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Upstream first</div><p class="text-xs text-neutral-400">The root before the branches.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Branch by branch</div><p class="text-xs text-neutral-400">Each branch to the end.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">No rework</div><p class="text-xs text-neutral-400">The order prevents rework.</p></div>
+</div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+</section>
+<!-- SEÇÃO 4 -->
+<section class="mb-16" data-inema-topic="modulo-2-1#topico-4" id="topico-4">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">4</span><h2 class="text-2xl font-bold">🔎 Explore before asking</h2></div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-1-t4-p1">A good interview <strong class="text-blue-400">doesn't waste your attention</strong> with what’s already written. If the answer is in the code, a file, or a doc you provided, the interviewer reads it and finds out on its own — and only brings up what’s genuinely new.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Explore first</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start gap-2"><span class="text-emerald-400">✓</span><span>Reads the codebase to understand what’s already there.</span></li>
+<li class="flex items-start gap-2"><span class="text-emerald-400">✓</span><span>Reads the doc you attached and absorbs what it can.</span></li>
+<li class="flex items-start gap-2"><span class="text-emerald-400">✓</span><span>Ask only what isn't written down anywhere.</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Asks the obvious</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start gap-2"><span class="text-red-400">✗</span><span>"What language does the project use?" — it’s in the code.</span></li>
+<li class="flex items-start gap-2"><span class="text-red-400">✗</span><span>Repeats what the doc already answered.</span></li>
+<li class="flex items-start gap-2"><span class="text-red-400">✗</span><span>It spends your time on what it could have read.</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">🎯</span> Tip</h3>
+<p class="text-neutral-300 text-sm">Did you provide a Google Doc or a README? The interviewer should read it and only ask <strong>net-new</strong> — what isn’t there. Your answers are reserved for knowledge that exists only in your head.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Read first</div><p class="text-xs text-neutral-400">Code, file, doc.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Net-new</div><p class="text-xs text-neutral-400">Only what’s new.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Not the obvious</div><p class="text-xs text-neutral-400">Nothing that’s written down.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Attention saved</div><p class="text-xs text-neutral-400">Reserved for tacit knowledge.</p></div>
+</div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+</section>
+<!-- SEÇÃO 5 -->
+<section class="mb-16" data-inema-topic="modulo-2-1#topico-5" id="topico-5">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">5</span><h2 class="text-2xl font-bold">🚩 Flags With an Owner</h2></div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-1-t5-p1">You won’t know everything — and that’s okay. When a question touches on something you don’t know well, it doesn’t stall the session: it becomes a <strong class="text-blue-400">flag</strong> with the <strong>owner</strong> right, and the interview continues.</p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-4 mb-6">
+<p class="text-sm text-neutral-300"><span class="text-blue-400 font-semibold">What is a “flag”?</span> An open item recorded in the capture file, with who can answer it. E.g.: <code class="text-xs text-primary">tabela de custo por caixa → financeiro</code>. Then you reach out to the person, get their response, and update the brainstorm.</p>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🚩</span> Why not get stuck</h3>
+<p class="text-neutral-300 text-sm">Stopping the entire session because one detail is missing is wasteful. The flag leaves the gap <strong>visible and addressed</strong> without interrupting the flow. In the reference video, this is what “talk to so-and-so and bring back the information later” looks like.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Flag</div><p class="text-xs text-neutral-400">Open item recorded.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Owner</div><p class="text-xs text-neutral-400">Who can answer.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Don’t stagnate</div><p class="text-xs text-neutral-400">The session continues.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Visible</div><p class="text-xs text-neutral-400">Gap addressed.</p></div>
+</div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+</section>
+<!-- SEÇÃO 6 -->
+<section class="mb-16" data-inema-topic="modulo-2-1#topico-6" id="topico-6">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">6</span><h2 class="text-2xl font-bold">💾 Checkpoint after each answer</h2></div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-1-t6-p1">This is the technique that makes the interview <strong class="text-blue-400">loss-proof</strong>. After each response, <strong>before</strong> starting with the next question, the interviewer appends a structured entry to the <strong>capture file</strong> — the markdown in <code class="text-xs text-primary">brainstorms/</code> that stores the session. Never in a batch.</p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-4 mb-6">
+<p class="text-sm text-neutral-300"><span class="text-blue-400 font-semibold">Capture file?</span> It’s the session capture file—the source of truth (covered in Track 1). The checkpoint is the act of writing to it. If a new answer contradicts an old one, the old entry is <strong>corrected</strong>, not duplicated.</p>
+</div>
+<div class="bg-dark-900 border border-dark-600 rounded-xl p-5 mb-6 overflow-x-auto">
+<div class="flex items-center gap-2 mb-3"><span class="w-3 h-3 rounded-full bg-red-400"></span><span class="w-3 h-3 rounded-full bg-yellow-400"></span><span class="w-3 h-3 rounded-full bg-emerald-400"></span><span class="text-xs text-neutral-500 ml-2">append to the capture file · illustrative recreation</span></div>
+<pre class="font-mono text-xs text-neutral-300 leading-relaxed">### Q3 — tamanho da caixa
+- Asked: como você decide o tamanho da caixa?
+- Captured: "menor caixa que cabe + 2cm de folga" (nas palavras dele)
+- Flags: tabela de custo por caixa -&gt; financeiro
+
+# ...próxima pergunta só DEPOIS de gravar isto.</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">📌</span> The rule you never break</h3>
+<p class="text-neutral-300 text-sm">Saving in a batch at the end defeats the purpose: if the session crashes halfway through, the batch doesn’t exist yet. One checkpoint per response ensures the file always contains everything that was said <strong>up to that point</strong>.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Immediate append</div><p class="text-xs text-neutral-400">Before the next question.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Never in batches</div><p class="text-xs text-neutral-400">One per answer.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Fix the past</div><p class="text-xs text-neutral-400">Updates old entries.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Loss-proof</div><p class="text-xs text-neutral-400">Always complete up to now.</p></div>
+</div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+</section>
+<!-- SEÇÃO 7 -->
+<section class="mb-16" data-inema-topic="modulo-2-1#topico-7" id="topico-7">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">7</span><h2 class="text-2xl font-bold">🧯 The Completeness Backstop</h2></div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-1-t7-p1">No matter how complete the tree is, there may always be a branch nobody saw. Near the end, the interviewer throws out a <strong class="text-blue-400">safety net</strong>: “is there any important aspect we haven’t touched on?”.</p>
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold mb-2">The tree has been traversed</h4><p class="text-neutral-300 text-sm">Every anticipated decision has become an answer or a flag. It seems finished.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold mb-2">The net question</h4><p class="text-neutral-300 text-sm">"Anything we haven't touched?" makes room for what was off the map.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold mb-2">The last gap appears</h4><p class="text-neutral-300 text-sm">Something almost always comes up — and it’s recorded like any other answer.</p></div>
+</div>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Safety net</div><p class="text-xs text-neutral-400">Capture what the tree didn't see.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Coverage</div><p class="text-xs text-neutral-400">Closes the last gaps.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Intentional ending</div><p class="text-xs text-neutral-400">It ends with a decision, not exhaustion.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Always records</div><p class="text-xs text-neutral-400">The finding goes into the file.</p></div>
+</div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+</section>
+<!-- SEÇÃO 8 -->
+<section class="mb-16" data-inema-topic="modulo-2-1#topico-8" id="topico-8">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl flex-shrink-0">8</span><h2 class="text-2xl font-bold">🔧 Reconcile contradictions</h2></div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-1-t8-p1">A long session accumulates answers that may contradict each other. The final step is a <strong class="text-blue-400">reading the entire file</strong>: look for contradictions and gaps, reconcile them, and wrap up with a clear recap.</p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🧭</span> The final recap</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• <strong>What was captured</strong> — the consolidated decisions.</li>
+<li>• <strong>What was left flagged</strong> — open items and their owners.</li>
+<li>• <strong>The suggested next step</strong> — where this goes (e.g., becomes a skill).</li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">📌</span> Why reread</h3>
+<p class="text-neutral-300 text-sm">Without rereading, the capture becomes a patchwork where answer 3 contradicts answer 12 and nobody notices. Reconciliation turns the raw log into a document <strong>coherent</strong> and usable.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Review</div><p class="text-xs text-neutral-400">The entire file at the end.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Reconcile</div><p class="text-xs text-neutral-400">Resolve contradictions.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Recap</div><p class="text-xs text-neutral-400">Captured / flag / next.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-blue-400 font-bold text-sm mb-1">Consistent</div><p class="text-xs text-neutral-400">A document, not fragments.</p></div>
+</div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+</section>
+<!-- RESUMO -->
+<section class="mb-8">
+<div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🎤</span> Module summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">One question at a time</strong><span class="text-neutral-400"> — serial, with a recommended answer for you to react to.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Dependency tree</strong><span class="text-neutral-400"> — upstream before downstream, branch by branch.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Explore before asking</strong><span class="text-neutral-400"> — read the code/doc and ask only about what’s new.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Flags with an owner and checkpoint</strong><span class="text-neutral-400"> — don’t stall; save each answer before the next one.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-neutral-100">Backstop and reconciliation</strong><span class="text-neutral-400"> — safety net at the end and rereading to reconcile.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-blue-400 mb-2">Next track:</h3>
+<p class="text-neutral-300">Track 3 · <strong>The Skill</strong> — look under the hood of SKILL.md: frontmatter, Matt Pocock’s original version, the checkpoint rule, and the philosophy behind it.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Back to Track 2</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="../trilha3/modulo-3-1.html">Next: The Skill →</a>
+</div>
+</div>
+</section>
+</main>
+</div>
+<footer class="border-t border-dark-600 py-8 mt-8">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>🔥 Grill Me — INEMA Course · 2026 · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      if (!topicItem) return;
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      if (moduleCard) { moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); }); }
+      explanation.classList.toggle('active');
+      button.setAttribute('aria-expanded', explanation.classList.contains('active') ? 'true' : 'false');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    function syncThemeIcons(){ if (htmlEl.classList.contains('dark')) { themeToggleLightIcon.classList.remove('hidden'); themeToggleDarkIcon.classList.add('hidden'); } else { themeToggleDarkIcon.classList.remove('hidden'); themeToggleLightIcon.classList.add('hidden'); } }
+    syncThemeIcons();
+    themeToggle.addEventListener('click', () => {
+      htmlEl.classList.toggle('dark');
+      const isDark = htmlEl.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      try { var pr = JSON.parse(localStorage.getItem('inema.prefs')||'{}'); pr.theme = isDark ? 'inema-dark' : 'claro'; localStorage.setItem('inema.prefs', JSON.stringify(pr)); } catch(e){}
+      htmlEl.style.colorScheme = isDark ? 'dark' : 'light';
+      if (isDark) htmlEl.removeAttribute('data-theme');
+      syncThemeIcons();
+    });
+    function openModal(id){ const m=document.getElementById(id); if(m){ m.classList.remove('hidden'); document.body.style.overflow='hidden'; } }
+    function closeModal(){ document.querySelectorAll('.modal').forEach(m=>m.classList.add('hidden')); document.body.style.overflow='auto'; }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../../assets/learn.js"></script>
+<script>if (window.INEMA && typeof window.INEMA.init === 'function') window.INEMA.init();</script>
+</body>
+</html>

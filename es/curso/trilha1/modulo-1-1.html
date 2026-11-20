@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="grillme" name="inema-course"/>
+<title>Módulo 1.1 · Por qué extraer contexto es lo más importante | Grill Me</title>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "grillme",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos", "modules": [
+        { "id": "1-1", "title": "Por que extrair contexto é o jogo todo", "topics": 8, "href": "curso/trilha1/modulo-1-1.html" }
+      ]},
+      { "n": "2", "title": "As Técnicas", "modules": [
+        { "id": "2-1", "title": "Anatomia de uma entrevista relentless", "topics": 8, "href": "curso/trilha2/modulo-2-1.html" }
+      ]},
+      { "n": "3", "title": "O Skill", "modules": [
+        { "id": "3-1", "title": "Anatomia do SKILL.md do grill-me", "topics": 8, "href": "curso/trilha3/modulo-3-1.html" }
+      ]},
+      { "n": "4", "title": "Avançado", "modules": [
+        { "id": "4-1", "title": "Aplicando o grill-me de verdade", "topics": 8, "href": "curso/trilha4/modulo-4-1.html" }
+      ]}
+    ]
+  }
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='inema-dark'; }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark:true,  attr:null,        cs:'dark'  },
+        'claro':      { dark:false, attr:null,        cs:'light' },
+        'sepia':      { dark:false, attr:'sepia',     cs:'light' },
+        'foco':       { dark:null,  attr:'foco',      cs:null    },
+        'contraste':  { dark:true,  attr:'contraste', cs:'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'emerald');
+      var s = html.style, scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale/100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
+        : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald:[152,76,45], blue:[217,91,60], purple:[258,90,66], amber:[38,92,50], teal:[174,72,41], rose:[350,89,60] };
+      var a = ACC[p.accent] || ACC.emerald;
+      s.setProperty('--accent-h', a[0]+''); s.setProperty('--accent-s', a[1]+'%'); s.setProperty('--accent-l', a[2]+'%');
+      s.setProperty('--accent', 'hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)');
+    } catch (err) { try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme='dark'; } catch(e){} }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
+      primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+    } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    [id^="topico-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+    html:not(.dark) .hover\:bg-emerald-500\/30:hover { background-color: rgba(5,150,105,0.18); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) .hover\:text-amber-400:hover { color: #92400e; }
+    html:not(.dark) .hover\:bg-amber-500\/10:hover { background-color: rgba(217,119,6,0.08); }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-900\/20 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,0.25); }
+    html:not(.dark) .text-emerald-300 { color: #047857; }
+    html:not(.dark) .bg-emerald-900\/20 { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .bg-red-900\/20 { background-color: rgba(185,28,28,0.07); }
+    html:not(.dark) .border-red-500\/30 { border-color: rgba(185,28,28,0.25); }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/30 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .text-red-400 { color: #b91c1c; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    .inema-toc-link.is-active { color: #34d399; font-weight: 600; }
+    html:not(.dark) .inema-toc-link.is-active { color: #059669; }
+  </style>
+<link href="https://inematds.github.io/grillme/curso/trilha1/modulo-1-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/grillme/en/curso/trilha1/modulo-1-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/grillme/es/curso/trilha1/modulo-1-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1/modulo-1-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-dark-800 focus:rounded-lg" href="#conteudo">Saltar al contenido</a>
+<!-- NAVIGATION (T1 ativa) -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🔥</span><span class="font-bold text-lg hidden sm:inline">Grill Me</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Técnicas</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">O Skill</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Avanzado</span></a>
+<button class="inline-flex items-center gap-1.5 px-2 sm:px-3 py-1.5 rounded-lg text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors text-sm ml-1" data-inema-journey-open="" type="button"><span aria-hidden="true">◷</span><span class="hidden sm:inline">Recorrido</span><span aria-hidden="true" class="inema-journey-badge hidden"></span></button>
+<button aria-label="Cambiar de tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- BREADCRUMB -->
+<nav aria-label="Ruta de navegación" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Trilha 1</a><span>/</span>
+<span class="text-emerald-400">Módulo 1.1</span>
+</div>
+</nav>
+<!-- HEADER -->
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🧠 Por qué extraer contexto es el objetivo principal</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">El modelo es el mismo para todos. La ventaja está en el contexto atrapado en tu cabeza — y sacarlo de ahí, organizado, es el trabajo que más rinde.</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">8</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">~45</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Teoría</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div>
+</div>
+</header>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[210px_1fr] lg:gap-10">
+<!-- TOC STICKY -->
+<nav aria-label="Índice del módulo" class="hidden lg:block sticky top-24 self-start" data-inema-toc="">
+<p class="text-sm text-neutral-400 mb-3">Sección <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">8</span></p>
+<ul class="space-y-1.5 text-sm">
+<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-1">1. El modelo es igual</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-2">2. Contexto y voz</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-3">3. La extracción</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-4">4. Brain dump no basta</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-5">5. Afilar el hacha</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-6">6. La curva de iteración</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-7">7. El capture file</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-8">8. Cuándo usar</a></li>
+</ul>
+</nav>
+<main class="inema-prose min-w-0" id="conteudo">
+<!-- SEÇÃO 1 -->
+<section class="mb-16" data-inema-topic="modulo-1-1#topico-1" id="topico-1">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">1</span>
+<h2 class="text-2xl font-bold">🤖 El modelo es igual para todos</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t1-p1">Empieza por la constatación incómoda: si usas <strong class="text-emerald-400">Claude Opus 4.8</strong> y tu competidor también, ambos parten exactamente del mismo lugar. El mismo prompt, en el mismo modelo, tiende a producir el mismo tipo de respuesta. El modelo se convirtió en <strong>commodity</strong> — un insumo idéntico para todos.</p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-4 mb-6">
+<p class="text-sm text-neutral-300"><span class="text-emerald-400 font-semibold">¿Eres nuevo aquí?</span> Uno <strong>modelo</strong> (o <strong>LLM</strong>) es la IA que funciona detrás de cosas como ChatGPT y Claude. "El mismo modelo" significa que la inteligencia de base es literalmente la misma para cualquiera que lo use.</p>
+</div>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-3 flex items-center"><span class="mr-2">💡</span> La idea central</h3>
+<p class="text-neutral-300">Si el modelo es igual, él <strong>no puede</strong> ser tu diferencial. Perseguir «el prompt perfecto» es optimizar la parte que todos ya tienen igual. La diferencia está en otro lugar, y los siguientes temas muestran dónde.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Commodity</div><p class="text-xs text-neutral-400">El modelo es un insumo igual para todos.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Mismo input</div><p class="text-xs text-neutral-400">Mismo prompt → misma clase de output.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Prompt ≠ ventaja</div><p class="text-xs text-neutral-400">Afinar el prompt rinde poco por sí solo.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Dónde está</div><p class="text-xs text-neutral-400">La ventaja está en el contexto.</p></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como leído</span>
+</button>
+</div>
+</section>
+<!-- SEÇÃO 2 -->
+<section class="mb-16" data-inema-topic="modulo-1-1#topico-2" id="topico-2">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">2</span>
+<h2 class="text-2xl font-bold">🎨 Contexto, criterio y voz</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t2-p1">Lo que hace que un resultado <em>tu</em> es lo que le agregas al modelo: tu <strong class="text-emerald-400">contexto</strong>, tu gusto (<em>taste</em>), tu voz y tus decisiones. Eso es lo que hace que el output deje de sonar como "cualquier IA" y empiece a sonar como tú o como tu empresa.</p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-4 mb-6">
+<p class="text-sm text-neutral-300"><span class="text-emerald-400 font-semibold">¿Qué es el «contexto»?</span> Es todo el conocimiento que le das al modelo además del pedido en sí: cómo tomas decisiones, ejemplos de tu estilo, reglas de tu negocio. En Claude Code, suele estar en <strong>skills</strong> e <strong>docs</strong>. Un <strong>skill</strong> es un fragmento de instrucciones reutilizable que el modelo carga cuando surge el tema.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Sin tu contexto</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start gap-2"><span class="text-red-400">✗</span><span>Texto correcto, pero genérico: "suena a IA".</span></li>
+<li class="flex items-start gap-2"><span class="text-red-400">✗</span><span>Decisiones según el promedio del mundo, no el tuyo.</span></li>
+<li class="flex items-start gap-2"><span class="text-red-400">✗</span><span>Reescribes todo al final para que parezca tuyo.</span></li>
+</ul>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Con tu contexto</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start gap-2"><span class="text-emerald-400">✓</span><span>El output ya sale con tu voz y tus reglas.</span></li>
+<li class="flex items-start gap-2"><span class="text-emerald-400">✓</span><span>Las decisiones reflejan tu forma de trabajar.</span></li>
+<li class="flex items-start gap-2"><span class="text-emerald-400">✓</span><span>Menos retrabajo: aprueba más, reescribe menos.</span></li>
+</ul>
+</div>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Contexto</div><p class="text-xs text-neutral-400">Lo que aportas además de lo pedido.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Taste</div><p class="text-xs text-neutral-400">Tu gusto y criterio de calidad.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Voz</div><p class="text-xs text-neutral-400">La forma en que suena como tú.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Decisiones</div><p class="text-xs text-neutral-400">Tus elecciones, no el promedio.</p></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como leído</span></button>
+</div>
+</section>
+<!-- SEÇÃO 3 -->
+<section class="mb-16" data-inema-topic="modulo-1-1#topico-3" id="topico-3">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">3</span>
+<h2 class="text-2xl font-bold">🧠 El problema es la extracción</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t3-p1">Si el contexto es la ventaja, ¿por qué no está en tu sistema? Porque la parte verdaderamente difícil es la <strong class="text-emerald-400">extracción</strong>: sacar el conocimiento de tu cabeza, donde vive de forma <strong>tácita</strong> y desorganizada, y ponerla en un formato que la IA pueda usar.</p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-4 mb-6">
+<p class="text-sm text-neutral-300"><span class="text-emerald-400 font-semibold">Conocimiento tácito vs. explícito.</span> <strong>Tácito</strong> es lo que sabes hacer, pero no puedes explicar de inmediato (andar en bicicleta, «sentir» que un precio está mal). <strong>Explícito</strong> es lo que ya está escrito y organizado. grill-me existe para convertir lo tácito en explícito.</p>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🔍</span> Por qué cuesta extraer</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>• Ya sabes tanto que <strong>se salta pasos</strong> sin darte cuenta: la «maldición del conocimiento».</li>
+<li>• Muchas cosas solo aparecen cuando <strong>alguien pregunta</strong> directamente sobre ella.</li>
+<li>• Explicar el propio proceso expone partes que <strong>tú mismo no dominas</strong> tan bien como pensabas.</li>
+</ul>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Tácito</div><p class="text-xs text-neutral-400">Lo sabes, pero no lo escribiste.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Explícito</div><p class="text-xs text-neutral-400">Ya está organizado y es legible.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Cuello de botella</div><p class="text-xs text-neutral-400">La extracción, no el modelo.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Maldición</div><p class="text-xs text-neutral-400">Quien sabe se salta etapas.</p></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como leído</span></button>
+</div>
+</section>
+<!-- SEÇÃO 4 -->
+<section class="mb-16" data-inema-topic="modulo-1-1#topico-4" id="topico-4">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">4</span>
+<h2 class="text-2xl font-bold">💨 Un volcado de ideas no basta</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t4-p1">La reacción natural es: «voy a volcar todo en Claude durante 5 minutos y será suficiente». <strong class="text-emerald-400">Nunca es lo suficientemente bueno.</strong> El volcado libre queda a merced de tus propios puntos ciegos: hablas de lo que recuerdas, generalizas los matices y ni siquiera notas los vacíos.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Volcado de ideas de 5 min</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start gap-2"><span class="text-red-400">✗</span><span>Tú decides qué es relevante y omites el resto.</span></li>
+<li class="flex items-start gap-2"><span class="text-red-400">✗</span><span>Generaliza los matices («depende») sin dar detalles.</span></li>
+<li class="flex items-start gap-2"><span class="text-red-400">✗</span><span>Los vacíos se vuelven invisibles: nadie los señala.</span></li>
+</ul>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Entrevista dirigida</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start gap-2"><span class="text-emerald-400">✓</span><span>Las preguntas sacan a la luz lo que no aportarías por tu cuenta.</span></li>
+<li class="flex items-start gap-2"><span class="text-emerald-400">✓</span><span>Se recorre hasta el final cada rama de la decisión.</span></li>
+<li class="flex items-start gap-2"><span class="text-emerald-400">✓</span><span>Los huecos se convierten en preguntas — y después, en flags.</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">🎯</span> Consejo</h3>
+<p class="text-neutral-300 text-sm">Cuando te descubras pensando "ya expliqué lo suficiente", es justo ahí cuando el grill-me cobra valor: la siguiente pregunta suele revelar algo que jamás habrías escrito espontáneamente.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Puntos ciegos</div><p class="text-xs text-neutral-400">No sabes qué omitiste.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Matiz perdido</div><p class="text-xs text-neutral-400">Generalizar acaba con los detalles.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Preguntar &gt; volcar</div><p class="text-xs text-neutral-400">La pregunta deja al descubierto el vacío.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">"Suficiente"</div><p class="text-xs text-neutral-400">Es la señal de que te detuviste demasiado pronto.</p></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como leído</span></button>
+</div>
+</section>
+<!-- SEÇÃO 5 -->
+<section class="mb-16" data-inema-topic="modulo-1-1#topico-5" id="topico-5">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">5</span>
+<h2 class="text-2xl font-bold">🪓 Afilar el hacha</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t5-p1">La frase atribuida a Lincoln resume la apuesta de grill-me: <em>"Si tuviera 6 horas para cortar un árbol, dedicaría las primeras 4 a afilar el hacha."</em> Analizar a fondo es la parte de afinar: invertir tiempo al principio para que todo lo demás fluya mucho mejor.</p>
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold mb-2">Las 4 horas afilando (parece improductivo)</h4>
+<p class="text-neutral-300 text-sm">La sesión de grill-me es lenta, repetitiva y a veces incómoda. Te invade la sensación de «esto es una pérdida de tiempo».</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
+<h4 class="font-semibold mb-2">Las 2 horas cortando (el trabajo real)</h4>
+<p class="text-neutral-300 text-sm">Con el contexto extraído, la skill o el proyecto quedan mucho mejor desde el principio. El corte es rápido porque el hacha estaba afilada.</p>
+</div>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">⏳</span> Paciencia productiva</h3>
+<p class="text-neutral-300 text-sm">El costo de «interrógame» se siente <strong>ahora</strong>; el retorno aparece <strong>después</strong>, repartido entre todas las veces que usas el skill o el documento resultante. Es una inversión, no un gasto.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Costo por adelantado</div><p class="text-xs text-neutral-400">Tiempo tedioso, pero corto.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Retorno posterior</div><p class="text-xs text-neutral-400">En cada uso futuro.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Inversión</div><p class="text-xs text-neutral-400">No es un gasto, es capital.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Afilar &gt; cortar</div><p class="text-xs text-neutral-400">La preparación le gana a la fuerza bruta.</p></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como leído</span></button>
+</div>
+</section>
+<!-- SEÇÃO 6 -->
+<section class="mb-16" data-inema-topic="modulo-1-1#topico-6" id="topico-6">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">6</span>
+<h2 class="text-2xl font-bold">📈 La curva de iteración</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t6-p1">Ningún skill nace perfecto. Lo iteras. La cuestión es <strong class="text-emerald-400">desde qué nivel partes</strong>. Sin grill-me, la primera iteración empieza cerca del 70% de acierto y sube despacio. Con grill-me, saltas a cerca del 90% desde la primera versión, y todavía iteras, pero desde mucho más arriba.</p>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Dos curvas de mejora por iteración: sin grill-me empieza en 70% y sube lentamente; con grill-me empieza cerca del 90% desde la iteración 1" class="w-full h-auto" role="img" viewbox="0 0 1000 320">
+<defs>
+<lineargradient id="t1m-grad" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#10b981"></stop></lineargradient>
+<pattern height="40" id="t1m-grid" patternunits="userSpaceOnUse" width="40"><circle cx="1.3" cy="1.3" fill="#10b981" opacity="0.10" r="1.3"></circle></pattern>
+</defs>
+<rect fill="url(#t1m-grid)" height="320" width="1000" x="0" y="0"></rect>
+<!-- eixos -->
+<line stroke="#4b5563" stroke-width="1.5" x1="90" x2="90" y1="40" y2="270"></line>
+<line stroke="#4b5563" stroke-width="1.5" x1="90" x2="950" y1="270" y2="270"></line>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="12" text-anchor="end" x="60" y="60">100%</text>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="12" text-anchor="end" x="60" y="120">90%</text>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="12" text-anchor="end" x="60" y="200">70%</text>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="520" y="298">iteraciones →</text>
+<!-- linha de teto 95% -->
+<line opacity="0.6" stroke="#38bdf8" stroke-dasharray="6 6" stroke-width="1.4" x1="90" x2="950" y1="78" y2="78"></line>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="end" x="945" y="72">~95% (probado en batalla)</text>
+<!-- curva sem grill-me -->
+<path d="M90,200 C260,150 520,110 950,90" fill="none" stroke="#9ca3af" stroke-dasharray="7 6" stroke-width="2.5"></path>
+<circle cx="90" cy="200" fill="#9ca3af" r="5"></circle>
+<text fill="#cbd5e1" font-family="Inter,sans-serif" font-size="13" x="120" y="225">sin grill-me: parte del 70 %, sube lentamente</text>
+<!-- curva com grill-me -->
+<path d="M90,108 C300,96 600,86 950,80" fill="none" stroke="url(#t1m-grad)" stroke-width="3.5"></path>
+<circle cx="90" cy="108" fill="#34d399" r="6"></circle>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="13" font-weight="600" x="120" y="100">con grill-me: ya parte cerca del 90%</text>
+<!-- destaque do salto -->
+<line stroke="#34d399" stroke-dasharray="3 3" stroke-width="2" x1="90" x2="90" y1="200" y2="108"></line>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="12" x="100" y="160">el salto inicial</text>
+</svg>
+</div>
+<p class="text-sm text-neutral-400 mb-6">Mira los dos puntos de partida a la izquierda: el tiempo dedicado a grillar anticipa ganancias que, sin él, requerirían muchas iteraciones. El techo (~95%) nunca llega al 100% — el skill evoluciona contigo y con el negocio.</p>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Nivel inicial</div><p class="text-xs text-neutral-400">70% vs. 90% en la iteración 1.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Menos vueltas</div><p class="text-xs text-neutral-400">Llega más rápido a lo «bueno».</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Límite ~95%</div><p class="text-xs text-neutral-400">Nunca al 100% — y está bien.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Siempre evoluciona</div><p class="text-xs text-neutral-400">El skill cambia contigo.</p></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como leído</span></button>
+</div>
+</section>
+<!-- SEÇÃO 7 -->
+<section class="mb-16" data-inema-topic="modulo-1-1#topico-7" id="topico-7">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">7</span>
+<h2 class="text-2xl font-bold">📄 El archivo de captura</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t7-p1">Este es el corazón de la versión práctica de grill-me: <strong class="text-emerald-400">el archivo es la fuente de verdad</strong>, no la memoria del modelo. Cada respuesta se guarda en un markdown dentro de <code class="text-xs text-primary">brainstorms/</code> — antes de la siguiente pregunta. El archivo, y no el contexto de la conversación, lo guarda todo.</p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-4 mb-6">
+<p class="text-sm text-neutral-300"><span class="text-emerald-400 font-semibold">¿Ventana de contexto?</span> Es la «memoria a corto plazo» del modelo en la conversación actual. Tiene un límite: en una entrevista larga, el comienzo puede resumirse u olvidarse. Por eso el <strong>checkpoint</strong> (guardar en disco después de cada respuesta) es lo que impide que algo se pierda.</p>
+</div>
+<div class="bg-dark-900 border border-dark-600 rounded-xl p-5 mb-6 overflow-x-auto">
+<div class="flex items-center gap-2 mb-3"><span class="w-3 h-3 rounded-full bg-red-400"></span><span class="w-3 h-3 rounded-full bg-yellow-400"></span><span class="w-3 h-3 rounded-full bg-emerald-400"></span><span class="text-xs text-neutral-500 ml-2">brainstorms/2026-06-22-packaging.md · recreación ilustrativa</span></div>
+<pre class="font-mono text-xs text-neutral-300 leading-relaxed"># Packaging: Brainstorm / Discovery Notes
+Date: 2026-06-22 · Goal: extrair o processo de embalagem
+
+## Summary / key decisions
+(síntese contínua, atualizada a cada resposta)
+
+## Q&amp;A log
+### Q1 — fluxo de empacotamento
+- Asked: como você decide o tamanho da caixa?
+- Captured: regra "menor caixa que cabe + 2cm"; nas palavras dele
+- Flags: tabela de custo por caixa -&gt; pedir ao financeiro
+
+## Open flags (pending input)
+- tabela de custo por caixa -&gt; financeiro</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">📌</span> Por qué el disco le gana a la memoria</h3>
+<p class="text-neutral-300 text-sm">Si la entrevista dura una hora, el modelo <strong>va</strong> confundir u olvidar detalles del inicio a medida que el contexto se llena. El archivo no olvida. Si la sesión se cae ahora, ya contiene todo lo que se dijo hasta aquí.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">brainstorms/</div><p class="text-xs text-neutral-400">Una casa predecible.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Punto de control</div><p class="text-xs text-neutral-400">Guarda después de cada respuesta.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Fuente de la verdad</div><p class="text-xs text-neutral-400">Archivo &gt; contexto.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">A prueba de caídas</div><p class="text-xs text-neutral-400">¿Perdiste la sesión? No se pierde nada.</p></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como leído</span></button>
+</div>
+</section>
+<!-- SEÇÃO 8 -->
+<section class="mb-16" data-inema-topic="modulo-1-1#topico-8" id="topico-8">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">8</span>
+<h2 class="text-2xl font-bold">🎯 Cuándo usarlo (y cuándo no)</h2>
+</div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t8-p1">«Interrógame» es una herramienta de <strong class="text-emerald-400">extracción</strong>, no un martillo universal. Brilla cuando hay conocimiento denso y desorganizado que extraer de alguien. Para una tarea trivial y bien definida, solo estorba.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Úsalo cuando</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start gap-2"><span class="text-emerald-400">✓</span><span>Quieres <strong>poner a prueba un plan</strong> o diseño antes de ejecutar.</span></li>
+<li class="flex items-start gap-2"><span class="text-emerald-400">✓</span><span>Está haciendo <strong>discovery</strong> con un cliente o stakeholder.</span></li>
+<li class="flex items-start gap-2"><span class="text-emerald-400">✓</span><span>Quieres extraer un <strong>proceso del negocio</strong> que solo está en tu cabeza.</span></li>
+<li class="flex items-start gap-2"><span class="text-emerald-400">✓</span><span>Vas a construir o mejorar un <strong>skill</strong> y quiere empezar desde arriba.</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Evítalo cuando</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start gap-2"><span class="text-red-400">✗</span><span>La tarea es <strong>obvia</strong> y ya está totalmente especificada.</span></li>
+<li class="flex items-start gap-2"><span class="text-red-400">✗</span><span>No hay conocimiento tácito que extraer: solo ejecución.</span></li>
+<li class="flex items-start gap-2"><span class="text-red-400">✗</span><span>La respuesta está <strong>en el codebase/doc</strong> (solo hay que leerlo).</span></li>
+<li class="flex items-start gap-2"><span class="text-red-400">✗</span><span>Quieres rapidez en un paso mecánico.</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-2 flex items-center"><span class="mr-2">🧭</span> Regla práctica</h3>
+<p class="text-neutral-300 text-sm">Pregunta: "¿hay algo importante que solo está en mi cabeza?" Si sí, grille. Si la respuesta está en un archivo o es trivial, omite el grill-me y ve directo al trabajo.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Poner a prueba el plan</div><p class="text-xs text-neutral-400">Encontrar los huecos antes.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Discovery</div><p class="text-xs text-neutral-400">Extraer de los stakeholders.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Proceso</div><p class="text-xs text-neutral-400">Documentar lo que es tácito.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">No: trivial</div><p class="text-xs text-neutral-400">Una tarea obvia no lo necesita.</p></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como leído</span></button>
+</div>
+</section>
+<!-- RESUMO -->
+<section class="mb-8">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🧠</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-neutral-100">El modelo es una commodity</strong><span class="text-neutral-400"> — la ventaja no está en el prompt, sino en el contexto.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-neutral-100">La extracción es el cuello de botella</strong><span class="text-neutral-400"> — convertir el conocimiento tácito en explícito.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-neutral-100">Un brain dump no basta</strong><span class="text-neutral-400"> — solo la entrevista dirigida expone los vacíos.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-neutral-100">Afilar el hacha</strong><span class="text-neutral-400"> — invertir antes hace que alcances ~90% en la primera iteración.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-neutral-100">El capture file es la fuente de la verdad</strong><span class="text-neutral-400"> — checkpoint en disco después de cada respuesta.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-emerald-400 mb-2">Siguiente ruta:</h3>
+<p class="text-neutral-300">Ruta 2 · <strong>Las técnicas</strong> — cómo funciona la entrevista por dentro: una pregunta a la vez, respuesta recomendada, árbol de dependencias, flags y checkpoint.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver a la Ruta 1</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="../trilha2/modulo-2-1.html">Siguiente: Las Técnicas →</a>
+</div>
+</div>
+</section>
+</main>
+</div>
+<footer class="border-t border-dark-600 py-8 mt-8">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>🔥 Grill Me — Curso INEMA · 2026 · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      if (!topicItem) return;
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      if (moduleCard) { moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); }); }
+      explanation.classList.toggle('active');
+      button.setAttribute('aria-expanded', explanation.classList.contains('active') ? 'true' : 'false');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    function syncThemeIcons(){ if (htmlEl.classList.contains('dark')) { themeToggleLightIcon.classList.remove('hidden'); themeToggleDarkIcon.classList.add('hidden'); } else { themeToggleDarkIcon.classList.remove('hidden'); themeToggleLightIcon.classList.add('hidden'); } }
+    syncThemeIcons();
+    themeToggle.addEventListener('click', () => {
+      htmlEl.classList.toggle('dark');
+      const isDark = htmlEl.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      try { var pr = JSON.parse(localStorage.getItem('inema.prefs')||'{}'); pr.theme = isDark ? 'inema-dark' : 'claro'; localStorage.setItem('inema.prefs', JSON.stringify(pr)); } catch(e){}
+      htmlEl.style.colorScheme = isDark ? 'dark' : 'light';
+      if (isDark) htmlEl.removeAttribute('data-theme');
+      syncThemeIcons();
+    });
+    function openModal(id){ const m=document.getElementById(id); if(m){ m.classList.remove('hidden'); document.body.style.overflow='hidden'; } }
+    function closeModal(){ document.querySelectorAll('.modal').forEach(m=>m.classList.add('hidden')); document.body.style.overflow='auto'; }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../../assets/learn.js"></script>
+<script>if (window.INEMA && typeof window.INEMA.init === 'function') window.INEMA.init();</script>
+</body>
+</html>

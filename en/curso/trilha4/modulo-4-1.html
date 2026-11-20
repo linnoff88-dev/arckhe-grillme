@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="grillme" name="inema-course"/>
+<title>Module 4.1 · Putting grill-me into practice | Grill Me</title>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "grillme",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos", "modules": [
+        { "id": "1-1", "title": "Por que extrair contexto é o jogo todo", "topics": 8, "href": "curso/trilha1/modulo-1-1.html" }
+      ]},
+      { "n": "2", "title": "As Técnicas", "modules": [
+        { "id": "2-1", "title": "Anatomia de uma entrevista relentless", "topics": 8, "href": "curso/trilha2/modulo-2-1.html" }
+      ]},
+      { "n": "3", "title": "O Skill", "modules": [
+        { "id": "3-1", "title": "Anatomia do SKILL.md do grill-me", "topics": 8, "href": "curso/trilha3/modulo-3-1.html" }
+      ]},
+      { "n": "4", "title": "Avançado", "modules": [
+        { "id": "4-1", "title": "Aplicando o grill-me de verdade", "topics": 8, "href": "curso/trilha4/modulo-4-1.html" }
+      ]}
+    ]
+  }
+  </script>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='inema-dark'; }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark': { dark:true,  attr:null,        cs:'dark'  },
+        'claro':      { dark:false, attr:null,        cs:'light' },
+        'sepia':      { dark:false, attr:'sepia',     cs:'light' },
+        'foco':       { dark:null,  attr:'foco',      cs:null    },
+        'contraste':  { dark:true,  attr:'contraste', cs:'dark'  }
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
+      html.setAttribute('data-font', p.font || 'inter');
+      html.setAttribute('data-accent', p.accent || 'emerald');
+      var s = html.style, scale = (+p.fontScale || 100);
+      s.setProperty('--inema-font-scale', (scale/100).toString());
+      s.setProperty('font-size', scale + '%');
+      s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
+      s.setProperty('--lh-body', (+p.leading || 1.7).toString());
+      var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
+        : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald:[152,76,45], blue:[217,91,60], purple:[258,90,66], amber:[38,92,50], teal:[174,72,41], rose:[350,89,60] };
+      var a = ACC[p.accent] || ACC.emerald;
+      s.setProperty('--accent-h', a[0]+''); s.setProperty('--accent-s', a[1]+'%'); s.setProperty('--accent-l', a[2]+'%');
+      s.setProperty('--accent', 'hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)');
+    } catch (err) { try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme='dark'; } catch(e){} }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
+      primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+    } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    [id^="topico-"] { scroll-margin-top: 5rem; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-amber-400 { color: #92400e; }
+    html:not(.dark) .bg-amber-500\/20 { background-color: rgba(217,119,6,0.12); }
+    html:not(.dark) .bg-amber-500\/10 { background-color: rgba(217,119,6,0.08); }
+    html:not(.dark) .border-amber-500\/30 { border-color: rgba(217,119,6,0.25); }
+    html:not(.dark) .hover\:bg-amber-500\/30:hover { background-color: rgba(217,119,6,0.18); }
+    html:not(.dark) .hover\:text-amber-400:hover { color: #92400e; }
+    html:not(.dark) .hover\:bg-amber-500\/10:hover { background-color: rgba(217,119,6,0.08); }
+    html:not(.dark) .bg-amber-900\/20 { background-color: rgba(217,119,6,0.08); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-900\/20 { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-900\/20 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,0.25); }
+    html:not(.dark) .bg-red-900\/20 { background-color: rgba(185,28,28,0.07); }
+    html:not(.dark) .border-red-500\/30 { border-color: rgba(185,28,28,0.25); }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/30 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .text-red-400 { color: #b91c1c; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    .inema-toc-link.is-active { color: #fbbf24; font-weight: 600; }
+    html:not(.dark) .inema-toc-link.is-active { color: #92400e; }
+  </style>
+<link href="https://inematds.github.io/grillme/curso/trilha4/modulo-4-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/grillme/en/curso/trilha4/modulo-4-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/grillme/es/curso/trilha4/modulo-4-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha4/modulo-4-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-4-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha4/modulo-4-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-dark-800 focus:rounded-lg" href="#conteudo">Skip to content</a>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🔥</span><span class="font-bold text-lg hidden sm:inline">Grill Me</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentals</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Techniques</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">The Skill</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-amber-400 bg-amber-500/10" href="index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Advanced</span></a>
+<button class="inline-flex items-center gap-1.5 px-2 sm:px-3 py-1.5 rounded-lg text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors text-sm ml-1" data-inema-journey-open="" type="button"><span aria-hidden="true">◷</span><span class="hidden sm:inline">Journey</span><span aria-hidden="true" class="inema-journey-badge hidden"></span></button>
+<button aria-label="Switch topics" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Navigation path" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-amber-400" href="../../index.html">Start</a><span>/</span>
+<a class="hover:text-amber-400" href="index.html">Track 4</a><span>/</span>
+<span class="text-amber-400">Module 4.1</span>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-amber-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-amber-500/20 text-amber-400 text-xs font-semibold rounded-full mb-4">MODULE 4.1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🎯 Putting grill-me into practice</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Here you paste prompts and run them. The examples are real—replace what's in <code class="text-sm">&lt;colchetes&gt;</code> and use in your Claude Code.</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-amber-400">8</div><div class="text-xs text-neutral-400">Topics</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-amber-400">~50</div><div class="text-xs text-neutral-400">Minutes</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-amber-400">Advanced</div><div class="text-xs text-neutral-400">Level</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-amber-400">Practical</div><div class="text-xs text-neutral-400">Type</div></div>
+</div>
+</div>
+</header>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[210px_1fr] lg:gap-10">
+<nav aria-label="Module index" class="hidden lg:block sticky top-24 self-start" data-inema-toc="">
+<p class="text-sm text-neutral-400 mb-3">Section <span class="inema-toc-pos">1</span> of <span class="inema-toc-total">8</span></p>
+<ul class="space-y-1.5 text-sm">
+<li><a class="inema-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-1">1. How to invoke</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-2">2. Grill the business</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-3">3. The difficulty of answering</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-4">4. When you don't know</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-5">5. Re-grill</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-6">6. To the deliverable</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-7">7. + skill-creator</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-8">8. Anti-patterns</a></li>
+</ul>
+</nav>
+<main class="inema-prose min-w-0" id="conteudo">
+<!-- SEÇÃO 1 -->
+<section class="mb-16" data-inema-topic="modulo-4-1#topico-1" id="topico-1">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl flex-shrink-0">1</span><h2 class="text-2xl font-bold">⌨️ How to invoke</h2></div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t1-p1">There are two ways to trigger grill-me, and both work: the <strong class="text-amber-400">slash command</strong> (<code class="text-xs">/grill-me</code>) e a <strong class="text-amber-400">natural language</strong>. How the skill loads through your <code class="text-xs">description</code>, just describe what you want and it kicks in automatically.</p>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-4 mb-6">
+<p class="text-sm text-neutral-300"><span class="text-amber-400 font-semibold">Slash command?</span> It’s the shortcut <code class="text-xs">/nome-do-skill</code> that invokes a skill directly in Claude Code. The alternative is simply to write the request in English — the skill is triggered by its description.</p>
+</div>
+<div class="bg-dark-900 border border-amber-500/30 rounded-xl p-5 mb-6">
+<div class="flex items-center gap-2 mb-2"><span class="text-amber-400 font-semibold text-sm">Example to run</span><span class="text-xs text-neutral-500">— invoke it in natural language</span></div>
+<p class="text-xs text-neutral-400 mb-3"><strong>Objective:</strong> start a grill-me session on a topic of your own.</p>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4 mb-3 overflow-x-auto"><pre class="font-mono text-xs text-neutral-200 leading-relaxed">Grill me about <como aplicar="" de="" em="" eu="" ia="" internamente="" jeito="" meu="" nada="" negócio="" no="" não="" penso="" que="" quebre="" seguro="" um="">.
+One question at a time, with your recommended answer,
+and checkpoint to a file after each response.</como></pre></div>
+<p class="text-xs text-neutral-400"><strong>How to verify:</strong> it should create a file at <code class="text-xs">brainstorms/</code>, say where you saved it and do the <strong>first</strong> question — without dumping several at once.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">/grill-me</div><p class="text-xs text-neutral-400">The direct shortcut.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Natural</div><p class="text-xs text-neutral-400">"Grill me about X."</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Description</div><p class="text-xs text-neutral-400">It’s what triggers it.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">In your workflow</div><p class="text-xs text-neutral-400">Use the form that feels natural to you.</p></div>
+</div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+</section>
+<!-- SEÇÃO 2 -->
+<section class="mb-16" data-inema-topic="modulo-4-1#topico-2" id="topico-2">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl flex-shrink-0">2</span><h2 class="text-2xl font-bold">🏢 Grill the business/process</h2></div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t2-p1">The most valuable use: extracting a <strong class="text-amber-400">your business process</strong> from beginning to end. It’s the kind of thing that lives only in the mind of the person doing the work — and when documented, becomes a reusable skill, training, or context.</p>
+<div class="bg-dark-900 border border-amber-500/30 rounded-xl p-5 mb-6">
+<div class="flex items-center gap-2 mb-2"><span class="text-amber-400 font-semibold text-sm">Example to run</span><span class="text-xs text-neutral-500">— complete discovery prompt</span></div>
+<p class="text-xs text-neutral-400 mb-3"><strong>Objective:</strong> map out an entire process, with flags for anything you don't know.</p>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4 mb-3 overflow-x-auto"><pre class="font-mono text-xs text-neutral-200 leading-relaxed">Quero que você me grile relentlessly sobre o processo de
+<embalagem dos="" meus="" produtos="">, do começo ao fim.
+
+Regras:
+- Uma pergunta por vez, com a sua resposta recomendada.
+- Resolva dependências em ordem (decisão de cima primeiro).
+- Se algo estiver num doc/código, leia em vez de perguntar.
+- O que eu não souber, registre como flag com o dono certo
+  (ex.: "<tabela custo="" de=""> -&gt; <financeiro>") e siga.
+- Faça checkpoint em brainstorms/ a cada resposta.
+- No fim, releia tudo, reconcilie contradições e me dê um
+  recap: capturado, flags em aberto, próximo passo.</financeiro></tabela></embalagem></pre></div>
+<p class="text-xs text-neutral-400"><strong>How to verify:</strong> by the end, there must be a <code class="text-xs">brainstorms/AAAA-MM-DD-embalagem.md</code> with Summary, Q&amp;A log, and Open flags — and the recap must list at least one flag with an owner.</p>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">🎯</span> Tip</h3>
+<p class="text-neutral-300 text-sm">Always mark the variable parts with <code class="text-xs">&lt;colchetes&gt;</code> before pasting. The more specific the scope (“<em>packaging process</em>", not "<em>my business</em>"), the question tree is better.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Clear scope</div><p class="text-xs text-neutral-400">A process, not “everything.”</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Rules in the prompt</div><p class="text-xs text-neutral-400">Serial, flags, checkpoint.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Variables</div><p class="text-xs text-neutral-400">Marked in &lt;brackets&gt;.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Recap at the end</div><p class="text-xs text-neutral-400">Captured · flags · next.</p></div>
+</div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+</section>
+<!-- SEÇÃO 3 -->
+<section class="mb-16" data-inema-topic="modulo-4-1#topico-3" id="topico-3">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl flex-shrink-0">3</span><h2 class="text-2xl font-bold">😰 The difficulty of answering</h2></div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t3-p1">Here's the little-spoken truth: <strong class="text-amber-400">being grilled is uncomfortable</strong>. The questions touch on exactly what you've never put into words, and answering is tiring. That friction isn't a flaw in the process—it's the process working.</p>
+<div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-amber-400 mb-3 flex items-center"><span class="mr-2">💡</span> Why discomfort is the work</h3>
+<p class="text-neutral-300">The question that makes you hesitate is the one that matters most: it found something you knew how to do but had never explained. If nothing felt uncomfortable, grill-me wouldn’t be extracting anything new—it would just be confirming the obvious.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ The reaction that undermines you</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start gap-2"><span class="text-red-400">✗</span><span>"That’s enough, it’s good enough" at the first sign of fatigue.</span></li>
+<li class="flex items-start gap-2"><span class="text-red-400">✗</span><span>Give a shallow answer just to get past the question.</span></li>
+<li class="flex items-start gap-2"><span class="text-red-400">✗</span><span>Treating the hard question as a nuisance instead of gold.</span></li>
+</ul>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ The approach that extracts</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start gap-2"><span class="text-emerald-400">✓</span><span>Treat discomfort as a sign that you've found something.</span></li>
+<li class="flex items-start gap-2"><span class="text-emerald-400">✓</span><span>Let the session run — it could be 5 questions or 30.</span></li>
+<li class="flex items-start gap-2"><span class="text-emerald-400">✓</span><span>Answer with the real nuance, even if it takes longer.</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">⏳</span> Set expectations</h3>
+<p class="text-neutral-300 text-sm">A good session can take more than an hour. That’s normal and good. The sign you should keep going is precisely the feeling of “I’ve already explained this” — there’s almost always nuance missing there.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Friction = value</div><p class="text-xs text-neutral-400">The hard question is gold.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Don’t stop early</div><p class="text-xs text-neutral-400">"Enough" is deceptive.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Duration varies</div><p class="text-xs text-neutral-400">5 to 30+ questions.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Real nuance</div><p class="text-xs text-neutral-400">Worth the wait.</p></div>
+</div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+</section>
+<!-- SEÇÃO 4 -->
+<section class="mb-16" data-inema-topic="modulo-4-1#topico-4" id="topico-4">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl flex-shrink-0">4</span><h2 class="text-2xl font-bold">🤷 When You Don’t Know</h2></div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t4-p1">At some point, grill-me will hit a point where <strong class="text-amber-400">you don’t explain as well as the operator</strong> who does that every day. It’s not a failure — it’s information. It becomes a flag for the right stakeholder, and you get the answer later.</p>
+<div class="bg-dark-900 border border-amber-500/30 rounded-xl p-5 mb-6">
+<div class="flex items-center gap-2 mb-2"><span class="text-amber-400 font-semibold text-sm">Example to run</span><span class="text-xs text-neutral-500">— how to answer when you don’t know</span></div>
+<p class="text-xs text-neutral-400 mb-3"><strong>Objective:</strong> turn “I don’t know” into an actionable flag without blocking the session.</p>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4 mb-3 overflow-x-auto"><pre class="font-mono text-xs text-neutral-200 leading-relaxed">I don’t know this step in detail—the person who knows it best is the <pessoa estoque="" o="" opera="" que="">. Record it as a flag with that owner and
+move on to the next question. I'll bring her response
+afterward, and we'll update this brainstorm.</pessoa></pre></div>
+<p class="text-xs text-neutral-400"><strong>How to verify:</strong> the section <strong>Open flags</strong> the capture file gets an item <code class="text-xs">&lt;passo do estoque&gt; → &lt;operador&gt;</code> and the interview <strong>continues</strong> instead of getting stuck.</p>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🔁</span> The “I don’t know” cycle</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>1. The question touches on a gap in your knowledge.</li>
+<li>2. It becomes a flag for the person who knows (operator, finance, legal…).</li>
+<li>3. You find the person and collect the answer.</li>
+<li>4. Re-grill the brainstorm with the new information (next topic).</li>
+</ul>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Gap = data</div><p class="text-xs text-neutral-400">Show where you’re not an expert.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Flag → owner</div><p class="text-xs text-neutral-400">Operator/stakeholder.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Search and return</div><p class="text-xs text-neutral-400">It brings the answer later.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Honesty</div><p class="text-xs text-neutral-400">Don’t make up what you don’t know.</p></div>
+</div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+</section>
+<!-- SEÇÃO 5 -->
+<section class="mb-16" data-inema-topic="modulo-4-1#topico-5" id="topico-5">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl flex-shrink-0">5</span><h2 class="text-2xl font-bold">🔄 Grill again</h2></div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t5-p1">How each session leaves a <strong class="text-amber-400">document</strong>, you can return to it when you discover something new. The brainstorm is alive: found a process improvement, solved a flag, changed your mind? Grill again and update it.</p>
+<div class="bg-dark-900 border border-amber-500/30 rounded-xl p-5 mb-6">
+<div class="flex items-center gap-2 mb-2"><span class="text-amber-400 font-semibold text-sm">Example to run</span><span class="text-xs text-neutral-500">— resume an existing brainstorm</span></div>
+<p class="text-xs text-neutral-400 mb-3"><strong>Objective:</strong> update an old brainstorm with new information and resolve flags.</p>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4 mb-3 overflow-x-auto"><pre class="font-mono text-xs text-neutral-200 leading-relaxed">Leia brainstorms/&lt;2026-06-22-embalagem.md&gt;. Me grila de
+novo só sobre o que mudou: <descobri a="" caixa="" de="" escolher="" jeito="" melhor="" um=""> e a flag "<tabela custo="" de="">" foi
+resolvida — o valor é <x>. Atualize o arquivo (corrija as
+entradas afetadas) e me diga o que ficou diferente.</x></tabela></descobri></pre></div>
+<p class="text-xs text-neutral-400"><strong>How to verify:</strong> the same file is updated (not a new one), the flag comes from <strong>Open flags</strong>, and the Summary reflects the change.</p>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-2 flex items-center"><span class="mr-2">📌</span> Living doc, not frozen</h3>
+<p class="text-neutral-300 text-sm">In the reference video, that’s exactly what happens with the packaging brainstorm: when you find a “major breakthrough,” you go back to the doc and say, “here’s what I found, let’s update all of this.”</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Living doc</div><p class="text-xs text-neutral-400">Come back whenever you like.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Only what changed</div><p class="text-xs text-neutral-400">Grill on the delta, not everything.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Resolves flags</div><p class="text-xs text-neutral-400">Closes what was open.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Same file</div><p class="text-xs text-neutral-400">Update, don't duplicate.</p></div>
+</div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+</section>
+<!-- SEÇÃO 6 -->
+<section class="mb-16" data-inema-topic="modulo-4-1#topico-6" id="topico-6">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl flex-shrink-0">6</span><h2 class="text-2xl font-bold">📦 From brainstorm to deliverable</h2></div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t6-p1">Capture is raw material, not the final product. The <strong class="text-amber-400">raw</strong> always stays in <code class="text-xs">brainstorms/</code>; when the session produces a polished deliverable—a plan, a map, a spec, a skill—that artifact can move to the corresponding project folder.</p>
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold mb-2">Raw stays in brainstorms/</h4><p class="text-neutral-300 text-sm">The raw interview log—Q&amp;A, flags, synthesis—lives in a predictable place and never gets scattered.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold mb-2">Polished becomes a deliverable</h4><p class="text-neutral-300 text-sm">From the raw material, you distill a clean plan/spec/skill—and that one does go in the folder <code class="text-xs">projects/</code> of the work.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold mb-2">The return path remains</h4><p class="text-neutral-300 text-sm">If someone asks "where did this decision come from?", the original brainstorm is still there and traceable.</p></div>
+</div>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Raw</div><p class="text-xs text-neutral-400">Always in brainstorms/.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Polished</div><p class="text-xs text-neutral-400">Move to projects/.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Separation</div><p class="text-xs text-neutral-400">Raw ≠ deliverable.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Traceable</div><p class="text-xs text-neutral-400">The origin is recorded.</p></div>
+</div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+</section>
+<!-- SEÇÃO 7 -->
+<section class="mb-16" data-inema-topic="modulo-4-1#topico-7" id="topico-7">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl flex-shrink-0">7</span><h2 class="text-2xl font-bold">⚙️ Grill-me + skill-creator</h2></div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t7-p1">This is where the cycle closes. At the end of a session, grill-me realizes you have a <strong class="text-amber-400">skill and a doc</strong> with nuance that isn’t in them — and offers to update both. Combined with a <strong class="text-amber-400">skill-creator</strong>, is what takes a skill from ~70% to ~95%.</p>
+<div class="rounded-2xl border border-amber-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="The extracted brainstorm plus skill-creator produce a much better skill: the captured nuance becomes an update to the skill and the doc" class="w-full h-auto" role="img" viewbox="0 0 1000 210">
+<defs>
+<lineargradient id="t4m-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fbbf24"></stop><stop offset="1" stop-color="#f59e0b"></stop></lineargradient>
+<filter height="180%" id="t4m-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="34" id="t4m-grid" patternunits="userSpaceOnUse" width="34"><circle cx="1.3" cy="1.3" fill="#f59e0b" opacity="0.10" r="1.3"></circle></pattern>
+</defs>
+<rect fill="url(#t4m-grid)" height="210" width="1000" x="0" y="0"></rect>
+<g><rect fill="#1f1604" height="66" rx="13" stroke="#fbbf24" stroke-width="2" width="210" x="40" y="72"></rect></g>
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="145" y="100">📦 brainstorm</text>
+<text fill="#fcd9a0" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="145" y="122">extracted nuance</text>
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="28" font-weight="600" text-anchor="middle" x="290" y="112">+</text>
+<g><rect fill="#1f1604" height="66" rx="13" stroke="#fbbf24" stroke-width="2" width="210" x="340" y="72"></rect></g>
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="15" font-weight="600" text-anchor="middle" x="445" y="100">⚙️ skill-creator</text>
+<text fill="#fcd9a0" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="445" y="122">refines SKILL.md</text>
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="28" font-weight="600" text-anchor="middle" x="590" y="112">=</text>
+<g filter="url(#t4m-glow)"><rect fill="#1f1604" height="82" rx="16" stroke="url(#t4m-grad)" stroke-width="2.5" width="320" x="640" y="64"></rect></g>
+<text fill="#fbbf24" font-family="Inter,sans-serif" font-size="17" font-weight="600" text-anchor="middle" x="800" y="98">🚀 better skill</text>
+<text fill="#fcd9a0" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="800" y="120">~70% → ~95% faster</text>
+</svg>
+</div>
+<p class="text-sm text-neutral-400 mb-6">The nuance grill-me extracts doesn’t stay in the brainstorm: it feeds into updates to the skill and the doc. That’s “sharpening the axe” turning into a real cut.</p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🔗</span> The closing offer</h3>
+<p class="text-neutral-300 text-sm">In the end, grill-me says something like: <em>"I noticed you have this guide and this skill, and there’s a lot of nuance here that isn’t in them — do you want me to update both?"</em>. You answer "yes"—and your OS gets smarter.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Closes the loop</div><p class="text-xs text-neutral-400">Brainstorm → skill+doc.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Offer at the end</div><p class="text-xs text-neutral-400">"Do you want me to update it?"</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">skill-creator</div><p class="text-xs text-neutral-400">Refines the result.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">70% → 95%</div><p class="text-xs text-neutral-400">The leap in quality.</p></div>
+</div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+</section>
+<!-- SEÇÃO 8 -->
+<section class="mb-16" data-inema-topic="modulo-4-1#topico-8" id="topico-8">
+<div class="flex items-start justify-between gap-3 mb-6">
+<div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl flex-shrink-0">8</span><h2 class="text-2xl font-bold">⛔ Anti-patterns</h2></div>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+</div>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t8-p1">To wrap up, the mistakes that drain a grill-me session. Each one destroys one of the safeguards you learned in the previous tracks.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Anti-patterns</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start gap-2"><span class="text-red-400">✗</span><span>Answer <strong>in batches</strong> — kills the serial rhythm.</span></li>
+<li class="flex items-start gap-2"><span class="text-red-400">✗</span><span>Let <strong>skip the checkpoint</strong> — risks losing everything.</span></li>
+<li class="flex items-start gap-2"><span class="text-red-400">✗</span><span>Ask what you can <strong>explore</strong> no code/doc.</span></li>
+<li class="flex items-start gap-2"><span class="text-red-400">✗</span><span><strong>Stopping too early</strong> at the first "it's good enough."</span></li>
+</ul>
+</div>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ The right path</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start gap-2"><span class="text-emerald-400">✓</span><span>One question, one answer, one checkpoint.</span></li>
+<li class="flex items-start gap-2"><span class="text-emerald-400">✓</span><span>Require a checkpoint after every response in the prompt.</span></li>
+<li class="flex items-start gap-2"><span class="text-emerald-400">✓</span><span>Let the grill-me read before asking.</span></li>
+<li class="flex items-start gap-2"><span class="text-emerald-400">✓</span><span>Follow through until every branch is covered—flags resolve the rest.</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-2 flex items-center"><span class="mr-2">⚠️</span> The worst of the four</h3>
+<p class="text-neutral-300 text-sm">Skipping the checkpoint is the most dangerous thing: in a long session, if the context fills up or the session crashes, everything that hasn’t been saved <strong>some</strong>. That's why the rule is non-negotiable—explicitly ask for the checkpoint in your prompt.</p>
+</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">No batching</div><p class="text-xs text-neutral-400">Always serial.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Don't skip checkpoints</div><p class="text-xs text-neutral-400">Save every response.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Explore</div><p class="text-xs text-neutral-400">Before asking.</p></div>
+<div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Don’t stop early</div><p class="text-xs text-neutral-400">Cover every branch.</p></div>
+</div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+</section>
+<!-- RESUMO -->
+<section class="mb-8">
+<div class="bg-gradient-to-br from-amber-900/40 via-dark-800 to-dark-800 rounded-xl border border-amber-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🎯</span> Module summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-neutral-100">Invocation</strong><span class="text-neutral-400"> — slash command or natural language; describe the intent and the skill kicks in.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-neutral-100">Business prompt</strong><span class="text-neutral-400"> — clear scope, rules in the prompt, and variables in &lt;brackets&gt;.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-neutral-100">The difficulty of answering</strong><span class="text-neutral-400"> — discomfort is the sign that you’re extracting something real.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-neutral-100">Don’t know? Flag it</strong><span class="text-neutral-400"> — goes to the right owner; you can look it up and grill again later.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-amber-400 mt-1">✓</span><div><strong class="text-neutral-100">Close the loop</strong><span class="text-neutral-400"> — brainstorm → update skill+doc; the jump from 70% to 95%.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-amber-400 mb-2">You completed the course 🎉</h3>
+<p class="text-neutral-300">Now you know why context is everything, how the interview works, what's inside the SKILL.md, and how to use grill-me for real. Next step: run the prompt from section 2 in one of your own processes.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Back to Track 4</a>
+<a class="flex-1 text-center px-6 py-3 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-500 transition-colors" href="../../index.html">Finish · start of course →</a>
+</div>
+</div>
+</section>
+</main>
+</div>
+<footer class="border-t border-dark-600 py-8 mt-8">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>🔥 Grill Me — INEMA Course · 2026 · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      if (!topicItem) return;
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      if (moduleCard) { moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); }); }
+      explanation.classList.toggle('active');
+      button.setAttribute('aria-expanded', explanation.classList.contains('active') ? 'true' : 'false');
+    }
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const htmlEl = document.documentElement;
+    function syncThemeIcons(){ if (htmlEl.classList.contains('dark')) { themeToggleLightIcon.classList.remove('hidden'); themeToggleDarkIcon.classList.add('hidden'); } else { themeToggleDarkIcon.classList.remove('hidden'); themeToggleLightIcon.classList.add('hidden'); } }
+    syncThemeIcons();
+    themeToggle.addEventListener('click', () => {
+      htmlEl.classList.toggle('dark');
+      const isDark = htmlEl.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      try { var pr = JSON.parse(localStorage.getItem('inema.prefs')||'{}'); pr.theme = isDark ? 'inema-dark' : 'claro'; localStorage.setItem('inema.prefs', JSON.stringify(pr)); } catch(e){}
+      htmlEl.style.colorScheme = isDark ? 'dark' : 'light';
+      if (isDark) htmlEl.removeAttribute('data-theme');
+      syncThemeIcons();
+    });
+    function openModal(id){ const m=document.getElementById(id); if(m){ m.classList.remove('hidden'); document.body.style.overflow='hidden'; } }
+    function closeModal(){ document.querySelectorAll('.modal').forEach(m=>m.classList.add('hidden')); document.body.style.overflow='auto'; }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../../assets/learn.js"></script>
+<script>if (window.INEMA && typeof window.INEMA.init === 'function') window.INEMA.init();</script>
+</body>
+</html>
