@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="grillme" name="inema-course"/>
+<meta content="grillme" name="ARCKHÉ-course"/>
 <title>Módulo 1.1 · Por que extrair contexto é o jogo todo | Grill Me</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "grillme",
     "tracks": [
@@ -29,29 +29,29 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
-        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='inema-dark'; }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHÉ-dark'; }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark:true,  attr:null,        cs:'dark'  },
+        'ARCKHÉ-dark': { dark:true,  attr:null,        cs:'dark'  },
         'claro':      { dark:false, attr:null,        cs:'light' },
         'sepia':      { dark:false, attr:'sepia',     cs:'light' },
         'foco':       { dark:null,  attr:'foco',      cs:null    },
         'contraste':  { dark:true,  attr:'contraste', cs:'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
       html.setAttribute('data-font', p.font || 'inter');
       html.setAttribute('data-accent', p.accent || 'emerald');
       var s = html.style, scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale/100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale/100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -128,11 +128,11 @@
     .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
     html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
 
-    .inema-toc-link.is-active { color: #34d399; font-weight: 600; }
-    html:not(.dark) .inema-toc-link.is-active { color: #059669; }
+    .ARCKHÉ-toc-link.is-active { color: #34d399; font-weight: 600; }
+    html:not(.dark) .ARCKHÉ-toc-link.is-active { color: #059669; }
   </style>
-<link href="https://inematds.github.io/grillme/curso/trilha1/modulo-1-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/grillme/en/curso/trilha1/modulo-1-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/grillme/es/curso/trilha1/modulo-1-1.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-1-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha1/modulo-1-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha1/modulo-1-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-1-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha1/modulo-1-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha1/modulo-1-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-dark-800 focus:rounded-lg" href="#conteudo">Pular para o conteúdo</a>
 <!-- NAVIGATION (T1 ativa) -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
@@ -143,14 +143,14 @@
 <span class="text-2xl">🔥</span><span class="font-bold text-lg hidden sm:inline">Grill Me</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Técnicas</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">O Skill</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Avançado</span></a>
-<button class="inline-flex items-center gap-1.5 px-2 sm:px-3 py-1.5 rounded-lg text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors text-sm ml-1" data-inema-journey-open="" type="button"><span aria-hidden="true">◷</span><span class="hidden sm:inline">Jornada</span><span aria-hidden="true" class="inema-journey-badge hidden"></span></button>
+<button class="inline-flex items-center gap-1.5 px-2 sm:px-3 py-1.5 rounded-lg text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors text-sm ml-1" data-ARCKHÉ-journey-open="" type="button"><span aria-hidden="true">◷</span><span class="hidden sm:inline">Jornada</span><span aria-hidden="true" class="ARCKHÉ-journey-badge hidden"></span></button>
 <button aria-label="Alternar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
@@ -183,30 +183,30 @@
 </header>
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[210px_1fr] lg:gap-10">
 <!-- TOC STICKY -->
-<nav aria-label="Índice do módulo" class="hidden lg:block sticky top-24 self-start" data-inema-toc="">
-<p class="text-sm text-neutral-400 mb-3">Seção <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">8</span></p>
+<nav aria-label="Índice do módulo" class="hidden lg:block sticky top-24 self-start" data-ARCKHÉ-toc="">
+<p class="text-sm text-neutral-400 mb-3">Seção <span class="ARCKHÉ-toc-pos">1</span> de <span class="ARCKHÉ-toc-total">8</span></p>
 <ul class="space-y-1.5 text-sm">
-<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-1">1. O modelo é igual</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-2">2. Contexto e voz</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-3">3. A extração</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-4">4. Brain dump não basta</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-5">5. Afiar o machado</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-6">6. A curva de iteração</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-7">7. O capture file</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-8">8. Quando usar</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-1">1. O modelo é igual</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-2">2. Contexto e voz</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-3">3. A extração</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-4">4. Brain dump não basta</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-5">5. Afiar o machado</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-6">6. A curva de iteração</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-7">7. O capture file</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-emerald-400 transition-colors" href="#topico-8">8. Quando usar</a></li>
 </ul>
 </nav>
-<main class="inema-prose min-w-0" id="conteudo">
+<main class="ARCKHÉ-prose min-w-0" id="conteudo">
 <!-- SEÇÃO 1 -->
-<section class="mb-16" data-inema-topic="modulo-1-1#topico-1" id="topico-1">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-1#topico-1" id="topico-1">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">1</span>
 <h2 class="text-2xl font-bold">🤖 O modelo é igual pra todos</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tenho dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tenho dúvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t1-p1">Comece pela constatação incômoda: se você usa <strong class="text-emerald-400">Claude Opus 4.8</strong> e seu concorrente também, vocês partem exatamente do mesmo lugar. O mesmo prompt, no mesmo modelo, tende a produzir o mesmo tipo de resposta. O modelo virou <strong>commodity</strong> — um insumo idêntico para todo mundo.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-1-t1-p1">Comece pela constatação incômoda: se você usa <strong class="text-emerald-400">Claude Opus 4.8</strong> e seu concorrente também, vocês partem exatamente do mesmo lugar. O mesmo prompt, no mesmo modelo, tende a produzir o mesmo tipo de resposta. O modelo virou <strong>commodity</strong> — um insumo idêntico para todo mundo.</p>
 <div class="bg-dark-800 border border-dark-600 rounded-xl p-4 mb-6">
 <p class="text-sm text-neutral-300"><span class="text-emerald-400 font-semibold">Novo aqui?</span> Um <strong>modelo</strong> (ou <strong>LLM</strong>) é a IA que roda atrás de coisas como o ChatGPT e o Claude. "Mesmo modelo" significa que a inteligência de base é literalmente a mesma para qualquer pessoa que o usa.</p>
 </div>
@@ -221,21 +221,21 @@
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Onde está</div><p class="text-xs text-neutral-400">A vantagem está no contexto.</p></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como lido</span>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Marcar como lido</span>
 </button>
 </div>
 </section>
 <!-- SEÇÃO 2 -->
-<section class="mb-16" data-inema-topic="modulo-1-1#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-1#topico-2" id="topico-2">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">2</span>
 <h2 class="text-2xl font-bold">🎨 Contexto, taste e voz</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tenho dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tenho dúvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t2-p1">O que torna um resultado <em>seu</em> é o que você adiciona ao modelo: seu <strong class="text-emerald-400">contexto</strong>, seu gosto (<em>taste</em>), sua voz e suas decisões. É isso que faz o output deixar de soar como "qualquer IA" e passar a soar como você ou como a sua empresa.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-1-t2-p1">O que torna um resultado <em>seu</em> é o que você adiciona ao modelo: seu <strong class="text-emerald-400">contexto</strong>, seu gosto (<em>taste</em>), sua voz e suas decisões. É isso que faz o output deixar de soar como "qualquer IA" e passar a soar como você ou como a sua empresa.</p>
 <div class="bg-dark-800 border border-dark-600 rounded-xl p-4 mb-6">
 <p class="text-sm text-neutral-300"><span class="text-emerald-400 font-semibold">O que é "contexto"?</span> É todo o conhecimento que você dá ao modelo além do pedido em si: como você decide as coisas, exemplos do seu jeito, regras do seu negócio. Em Claude Code, isso costuma morar em <strong>skills</strong> e <strong>docs</strong>. Um <strong>skill</strong> é um pedaço de instrução reutilizável que o modelo carrega quando o assunto aparece.</p>
 </div>
@@ -264,19 +264,19 @@
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Decisões</div><p class="text-xs text-neutral-400">Suas escolhas, não a média.</p></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como lido</span></button>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button"><span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Marcar como lido</span></button>
 </div>
 </section>
 <!-- SEÇÃO 3 -->
-<section class="mb-16" data-inema-topic="modulo-1-1#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-1#topico-3" id="topico-3">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">3</span>
 <h2 class="text-2xl font-bold">🧠 O problema é a extração</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tenho dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tenho dúvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t3-p1">Se o contexto é a vantagem, por que ele não está no seu sistema? Porque a parte verdadeiramente difícil é a <strong class="text-emerald-400">extração</strong>: tirar o conhecimento da sua cabeça, onde ele vive de forma <strong>tácita</strong> e desorganizada, e colocá-lo num formato que a IA possa usar.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-1-t3-p1">Se o contexto é a vantagem, por que ele não está no seu sistema? Porque a parte verdadeiramente difícil é a <strong class="text-emerald-400">extração</strong>: tirar o conhecimento da sua cabeça, onde ele vive de forma <strong>tácita</strong> e desorganizada, e colocá-lo num formato que a IA possa usar.</p>
 <div class="bg-dark-800 border border-dark-600 rounded-xl p-4 mb-6">
 <p class="text-sm text-neutral-300"><span class="text-emerald-400 font-semibold">Conhecimento tácito vs. explícito.</span> <strong>Tácito</strong> é o que você sabe fazer mas não consegue explicar de imediato (andar de bicicleta, "sentir" que um preço está errado). <strong>Explícito</strong> é o que já está escrito e organizado. O grill-me existe para converter tácito em explícito.</p>
 </div>
@@ -295,19 +295,19 @@
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Maldição</div><p class="text-xs text-neutral-400">Quem sabe, pula etapas.</p></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como lido</span></button>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button"><span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Marcar como lido</span></button>
 </div>
 </section>
 <!-- SEÇÃO 4 -->
-<section class="mb-16" data-inema-topic="modulo-1-1#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-1#topico-4" id="topico-4">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">4</span>
 <h2 class="text-2xl font-bold">💨 Brain dump não basta</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tenho dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tenho dúvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t4-p1">A reação natural é: "vou despejar tudo no Claude por 5 minutos e está bom o suficiente". <strong class="text-emerald-400">Nunca é bom o suficiente.</strong> O despejo livre é refém dos seus próprios pontos cegos — você fala do que lembra, generaliza o que é nuance e nem percebe os buracos.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-1-t4-p1">A reação natural é: "vou despejar tudo no Claude por 5 minutos e está bom o suficiente". <strong class="text-emerald-400">Nunca é bom o suficiente.</strong> O despejo livre é refém dos seus próprios pontos cegos — você fala do que lembra, generaliza o que é nuance e nem percebe os buracos.</p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
 <h4 class="font-bold text-red-400 mb-4">✗ Brain dump de 5 min</h4>
@@ -337,19 +337,19 @@
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">"Suficiente"</div><p class="text-xs text-neutral-400">É o sinal de parar cedo demais.</p></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como lido</span></button>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button"><span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Marcar como lido</span></button>
 </div>
 </section>
 <!-- SEÇÃO 5 -->
-<section class="mb-16" data-inema-topic="modulo-1-1#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-1#topico-5" id="topico-5">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">5</span>
 <h2 class="text-2xl font-bold">🪓 Afiar o machado</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tenho dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tenho dúvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t5-p1">A frase atribuída a Lincoln resume a aposta do grill-me: <em>"Se eu tivesse 6 horas para cortar uma árvore, passaria as 4 primeiras afiando o machado."</em> Grilar é a parte de afiar — investir tempo na frente para que tudo depois corra muito mais fácil.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-1-t5-p1">A frase atribuída a Lincoln resume a aposta do grill-me: <em>"Se eu tivesse 6 horas para cortar uma árvore, passaria as 4 primeiras afiando o machado."</em> Grilar é a parte de afiar — investir tempo na frente para que tudo depois corra muito mais fácil.</p>
 <div class="space-y-6 mb-6">
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
@@ -377,19 +377,19 @@
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Afiar &gt; cortar</div><p class="text-xs text-neutral-400">Preparo vence força bruta.</p></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como lido</span></button>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button"><span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Marcar como lido</span></button>
 </div>
 </section>
 <!-- SEÇÃO 6 -->
-<section class="mb-16" data-inema-topic="modulo-1-1#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-1#topico-6" id="topico-6">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">6</span>
 <h2 class="text-2xl font-bold">📈 A curva de iteração</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tenho dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tenho dúvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t6-p1">Nenhum skill nasce perfeito. Você itera. A questão é <strong class="text-emerald-400">de qual patamar você parte</strong>. Sem grill-me, a iteração 1 começa perto de 70% de acerto e sobe devagar. Com grill-me, você salta para perto de 90% logo na primeira versão — e ainda itera, só que de muito mais alto.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-1-t6-p1">Nenhum skill nasce perfeito. Você itera. A questão é <strong class="text-emerald-400">de qual patamar você parte</strong>. Sem grill-me, a iteração 1 começa perto de 70% de acerto e sobe devagar. Com grill-me, você salta para perto de 90% logo na primeira versão — e ainda itera, só que de muito mais alto.</p>
 <div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="Duas curvas de melhoria por iteração: sem grill-me começa em 70% e sobe devagar; com grill-me começa perto de 90% desde a iteração 1" class="w-full h-auto" role="img" viewbox="0 0 1000 320">
 <defs>
@@ -428,19 +428,19 @@
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Evolui sempre</div><p class="text-xs text-neutral-400">O skill muda com você.</p></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como lido</span></button>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button"><span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Marcar como lido</span></button>
 </div>
 </section>
 <!-- SEÇÃO 7 -->
-<section class="mb-16" data-inema-topic="modulo-1-1#topico-7" id="topico-7">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-1#topico-7" id="topico-7">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">7</span>
 <h2 class="text-2xl font-bold">📄 O capture file</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tenho dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tenho dúvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t7-p1">Aqui está o coração da versão prática do grill-me: <strong class="text-emerald-400">o arquivo é a fonte da verdade</strong>, não a memória do modelo. Toda resposta é gravada num markdown dentro de <code class="text-xs text-primary">brainstorms/</code> — antes da próxima pergunta. O arquivo, e não o contexto da conversa, guarda tudo.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-1-t7-p1">Aqui está o coração da versão prática do grill-me: <strong class="text-emerald-400">o arquivo é a fonte da verdade</strong>, não a memória do modelo. Toda resposta é gravada num markdown dentro de <code class="text-xs text-primary">brainstorms/</code> — antes da próxima pergunta. O arquivo, e não o contexto da conversa, guarda tudo.</p>
 <div class="bg-dark-800 border border-dark-600 rounded-xl p-4 mb-6">
 <p class="text-sm text-neutral-300"><span class="text-emerald-400 font-semibold">Janela de contexto?</span> É a "memória de curto prazo" do modelo na conversa atual. Ela tem limite: numa entrevista longa, o começo pode ser resumido ou esquecido. Por isso o <strong>checkpoint</strong> (gravar em disco a cada resposta) é o que impede que algo se perca.</p>
 </div>
@@ -472,19 +472,19 @@ Date: 2026-06-22 · Goal: extrair o processo de embalagem
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">À prova de queda</div><p class="text-xs text-neutral-400">Perdeu sessão? Nada se perde.</p></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como lido</span></button>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button"><span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Marcar como lido</span></button>
 </div>
 </section>
 <!-- SEÇÃO 8 -->
-<section class="mb-16" data-inema-topic="modulo-1-1#topico-8" id="topico-8">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-1#topico-8" id="topico-8">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl flex-shrink-0">8</span>
 <h2 class="text-2xl font-bold">🎯 Quando usar (e quando não)</h2>
 </div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tenho dúvida</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar dúvida neste tópico" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tenho dúvida</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t8-p1">O grill-me é uma ferramenta de <strong class="text-emerald-400">extração</strong>, não um martelo universal. Ele brilha quando há conhecimento denso e desorganizado a tirar de alguém. Para uma tarefa trivial e já bem definida, ele só atrapalha.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-1-t8-p1">O grill-me é uma ferramenta de <strong class="text-emerald-400">extração</strong>, não um martelo universal. Ele brilha quando há conhecimento denso e desorganizado a tirar de alguém. Para uma tarefa trivial e já bem definida, ele só atrapalha.</p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
 <h4 class="font-bold text-emerald-400 mb-4">✓ Use quando</h4>
@@ -516,7 +516,7 @@ Date: 2026-06-22 · Goal: extrair o processo de embalagem
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-emerald-400 font-bold text-sm mb-1">Não: trivial</div><p class="text-xs text-neutral-400">Tarefa óbvia dispensa.</p></div>
 </div>
 <div class="flex justify-start mt-6">
-<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como lido</span></button>
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button"><span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Marcar como lido</span></button>
 </div>
 </section>
 <!-- RESUMO -->
@@ -544,7 +544,7 @@ Date: 2026-06-22 · Goal: extrair o processo de embalagem
 </div>
 <footer class="border-t border-dark-600 py-8 mt-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>🔥 Grill Me — Curso INEMA · 2026 · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+<p>🔥 Grill Me — Curso ARCKHÉ · 2026 · <a class="text-sky-400 hover:text-sky-300" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a></p>
 </div>
 </footer>
 <script>
@@ -567,7 +567,7 @@ Date: 2026-06-22 · Goal: extrair o processo de embalagem
       htmlEl.classList.toggle('dark');
       const isDark = htmlEl.classList.contains('dark');
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      try { var pr = JSON.parse(localStorage.getItem('inema.prefs')||'{}'); pr.theme = isDark ? 'inema-dark' : 'claro'; localStorage.setItem('inema.prefs', JSON.stringify(pr)); } catch(e){}
+      try { var pr = JSON.parse(localStorage.getItem('ARCKHÉ.prefs')||'{}'); pr.theme = isDark ? 'ARCKHÉ-dark' : 'claro'; localStorage.setItem('ARCKHÉ.prefs', JSON.stringify(pr)); } catch(e){}
       htmlEl.style.colorScheme = isDark ? 'dark' : 'light';
       if (isDark) htmlEl.removeAttribute('data-theme');
       syncThemeIcons();
@@ -577,6 +577,6 @@ Date: 2026-06-22 · Goal: extrair o processo de embalagem
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   </script>
 <script src="../../assets/learn.js"></script>
-<script>if (window.INEMA && typeof window.INEMA.init === 'function') window.INEMA.init();</script>
+<script>if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') window.ARCKHÉ.init();</script>
 </body>
 </html>

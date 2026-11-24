@@ -1,4 +1,4 @@
-﻿# ðŸ”¥ Grill Me â€” Curso INEMA
+# ðŸ”¥ Grill Me â€” Curso ARCKHÉ
 
 <div align="center">
   <img src="capa/logo.svg" alt="Arckhé AI" height="48" />
@@ -17,13 +17,13 @@ O modelo Ã© igual pra todos â€” sua vantagem Ã© o **contexto**. O grill
 3. **ðŸ› ï¸ O Skill** â€” anatomia do `SKILL.md` do grill-me.
 4. **ðŸŽ¯ AvanÃ§ado** â€” prompts para aplicar e a dificuldade de responder.
 
-PÃ¡gina Ãºnica, self-contained (HTML + Tailwind via CDN + camada de aprendizagem INEMA v2: progresso, marcar-lido, dÃºvida, anotaÃ§Ãµes, "minha jornada", temas).
+PÃ¡gina Ãºnica, self-contained (HTML + Tailwind via CDN + camada de aprendizagem ARCKHÉ v2: progresso, marcar-lido, dÃºvida, anotaÃ§Ãµes, "minha jornada", temas).
 
 Abra `index.html` no navegador ou acesse a versÃ£o publicada.
 
 Baseado no skill **grill-me** (Matt Pocock) e na variaÃ§Ã£o com checkpointing.
 
-â€” [INEMA.CLUB](https://inema.club)
+â€” [ARCKHÉ AI](https://ARCKHÉ AI)
 
 ---
 

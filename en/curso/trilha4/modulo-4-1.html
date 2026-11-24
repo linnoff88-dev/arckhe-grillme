@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="grillme" name="inema-course"/>
+<meta content="grillme" name="ARCKHÉ-course"/>
 <title>Module 4.1 · Putting grill-me into practice | Grill Me</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "grillme",
     "tracks": [
@@ -29,29 +29,29 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
-        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='inema-dark'; }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHÉ-dark'; }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark:true,  attr:null,        cs:'dark'  },
+        'ARCKHÉ-dark': { dark:true,  attr:null,        cs:'dark'  },
         'claro':      { dark:false, attr:null,        cs:'light' },
         'sepia':      { dark:false, attr:'sepia',     cs:'light' },
         'foco':       { dark:null,  attr:'foco',      cs:null    },
         'contraste':  { dark:true,  attr:'contraste', cs:'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
       html.setAttribute('data-font', p.font || 'inter');
       html.setAttribute('data-accent', p.accent || 'emerald');
       var s = html.style, scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale/100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale/100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -130,11 +130,11 @@
     .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
     html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
 
-    .inema-toc-link.is-active { color: #fbbf24; font-weight: 600; }
-    html:not(.dark) .inema-toc-link.is-active { color: #92400e; }
+    .ARCKHÉ-toc-link.is-active { color: #fbbf24; font-weight: 600; }
+    html:not(.dark) .ARCKHÉ-toc-link.is-active { color: #92400e; }
   </style>
-<link href="https://inematds.github.io/grillme/curso/trilha4/modulo-4-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/grillme/en/curso/trilha4/modulo-4-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/grillme/es/curso/trilha4/modulo-4-1.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha4/modulo-4-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-4-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha4/modulo-4-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha4/modulo-4-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-4-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha4/modulo-4-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-dark-800 focus:rounded-lg" href="#conteudo">Skip to content</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -144,14 +144,14 @@
 <span class="text-2xl">🔥</span><span class="font-bold text-lg hidden sm:inline">Grill Me</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentals</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Techniques</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">The Skill</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-amber-400 bg-amber-500/10" href="index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Advanced</span></a>
-<button class="inline-flex items-center gap-1.5 px-2 sm:px-3 py-1.5 rounded-lg text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors text-sm ml-1" data-inema-journey-open="" type="button"><span aria-hidden="true">◷</span><span class="hidden sm:inline">Journey</span><span aria-hidden="true" class="inema-journey-badge hidden"></span></button>
+<button class="inline-flex items-center gap-1.5 px-2 sm:px-3 py-1.5 rounded-lg text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors text-sm ml-1" data-ARCKHÉ-journey-open="" type="button"><span aria-hidden="true">◷</span><span class="hidden sm:inline">Journey</span><span aria-hidden="true" class="ARCKHÉ-journey-badge hidden"></span></button>
 <button aria-label="Switch topics" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
@@ -181,27 +181,27 @@
 </div>
 </header>
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[210px_1fr] lg:gap-10">
-<nav aria-label="Module index" class="hidden lg:block sticky top-24 self-start" data-inema-toc="">
-<p class="text-sm text-neutral-400 mb-3">Section <span class="inema-toc-pos">1</span> of <span class="inema-toc-total">8</span></p>
+<nav aria-label="Module index" class="hidden lg:block sticky top-24 self-start" data-ARCKHÉ-toc="">
+<p class="text-sm text-neutral-400 mb-3">Section <span class="ARCKHÉ-toc-pos">1</span> of <span class="ARCKHÉ-toc-total">8</span></p>
 <ul class="space-y-1.5 text-sm">
-<li><a class="inema-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-1">1. How to invoke</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-2">2. Grill the business</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-3">3. The difficulty of answering</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-4">4. When you don't know</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-5">5. Re-grill</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-6">6. To the deliverable</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-7">7. + skill-creator</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-8">8. Anti-patterns</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-1">1. How to invoke</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-2">2. Grill the business</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-3">3. The difficulty of answering</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-4">4. When you don't know</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-5">5. Re-grill</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-6">6. To the deliverable</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-7">7. + skill-creator</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-amber-400 transition-colors" href="#topico-8">8. Anti-patterns</a></li>
 </ul>
 </nav>
-<main class="inema-prose min-w-0" id="conteudo">
+<main class="ARCKHÉ-prose min-w-0" id="conteudo">
 <!-- SEÇÃO 1 -->
-<section class="mb-16" data-inema-topic="modulo-4-1#topico-1" id="topico-1">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-1#topico-1" id="topico-1">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl flex-shrink-0">1</span><h2 class="text-2xl font-bold">⌨️ How to invoke</h2></div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t1-p1">There are two ways to trigger grill-me, and both work: the <strong class="text-amber-400">slash command</strong> (<code class="text-xs">/grill-me</code>) e a <strong class="text-amber-400">natural language</strong>. How the skill loads through your <code class="text-xs">description</code>, just describe what you want and it kicks in automatically.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-1-t1-p1">There are two ways to trigger grill-me, and both work: the <strong class="text-amber-400">slash command</strong> (<code class="text-xs">/grill-me</code>) e a <strong class="text-amber-400">natural language</strong>. How the skill loads through your <code class="text-xs">description</code>, just describe what you want and it kicks in automatically.</p>
 <div class="bg-dark-800 border border-dark-600 rounded-xl p-4 mb-6">
 <p class="text-sm text-neutral-300"><span class="text-amber-400 font-semibold">Slash command?</span> It’s the shortcut <code class="text-xs">/nome-do-skill</code> that invokes a skill directly in Claude Code. The alternative is simply to write the request in English — the skill is triggered by its description.</p>
 </div>
@@ -219,15 +219,15 @@ and checkpoint to a file after each response.</como></pre></div>
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Description</div><p class="text-xs text-neutral-400">It’s what triggers it.</p></div>
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">In your workflow</div><p class="text-xs text-neutral-400">Use the form that feels natural to you.</p></div>
 </div>
-<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button"><span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Mark as read</span></button></div>
 </section>
 <!-- SEÇÃO 2 -->
-<section class="mb-16" data-inema-topic="modulo-4-1#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-1#topico-2" id="topico-2">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl flex-shrink-0">2</span><h2 class="text-2xl font-bold">🏢 Grill the business/process</h2></div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t2-p1">The most valuable use: extracting a <strong class="text-amber-400">your business process</strong> from beginning to end. It’s the kind of thing that lives only in the mind of the person doing the work — and when documented, becomes a reusable skill, training, or context.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-1-t2-p1">The most valuable use: extracting a <strong class="text-amber-400">your business process</strong> from beginning to end. It’s the kind of thing that lives only in the mind of the person doing the work — and when documented, becomes a reusable skill, training, or context.</p>
 <div class="bg-dark-900 border border-amber-500/30 rounded-xl p-5 mb-6">
 <div class="flex items-center gap-2 mb-2"><span class="text-amber-400 font-semibold text-sm">Example to run</span><span class="text-xs text-neutral-500">— complete discovery prompt</span></div>
 <p class="text-xs text-neutral-400 mb-3"><strong>Objective:</strong> map out an entire process, with flags for anything you don't know.</p>
@@ -255,15 +255,15 @@ Regras:
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Variables</div><p class="text-xs text-neutral-400">Marked in &lt;brackets&gt;.</p></div>
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Recap at the end</div><p class="text-xs text-neutral-400">Captured · flags · next.</p></div>
 </div>
-<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button"><span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Mark as read</span></button></div>
 </section>
 <!-- SEÇÃO 3 -->
-<section class="mb-16" data-inema-topic="modulo-4-1#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-1#topico-3" id="topico-3">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl flex-shrink-0">3</span><h2 class="text-2xl font-bold">😰 The difficulty of answering</h2></div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t3-p1">Here's the little-spoken truth: <strong class="text-amber-400">being grilled is uncomfortable</strong>. The questions touch on exactly what you've never put into words, and answering is tiring. That friction isn't a flaw in the process—it's the process working.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-1-t3-p1">Here's the little-spoken truth: <strong class="text-amber-400">being grilled is uncomfortable</strong>. The questions touch on exactly what you've never put into words, and answering is tiring. That friction isn't a flaw in the process—it's the process working.</p>
 <div class="bg-gradient-to-br from-amber-900/30 to-dark-800 rounded-xl border border-amber-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-amber-400 mb-3 flex items-center"><span class="mr-2">💡</span> Why discomfort is the work</h3>
 <p class="text-neutral-300">The question that makes you hesitate is the one that matters most: it found something you knew how to do but had never explained. If nothing felt uncomfortable, grill-me wouldn’t be extracting anything new—it would just be confirming the obvious.</p>
@@ -296,15 +296,15 @@ Regras:
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Duration varies</div><p class="text-xs text-neutral-400">5 to 30+ questions.</p></div>
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Real nuance</div><p class="text-xs text-neutral-400">Worth the wait.</p></div>
 </div>
-<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button"><span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Mark as read</span></button></div>
 </section>
 <!-- SEÇÃO 4 -->
-<section class="mb-16" data-inema-topic="modulo-4-1#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-1#topico-4" id="topico-4">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl flex-shrink-0">4</span><h2 class="text-2xl font-bold">🤷 When You Don’t Know</h2></div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t4-p1">At some point, grill-me will hit a point where <strong class="text-amber-400">you don’t explain as well as the operator</strong> who does that every day. It’s not a failure — it’s information. It becomes a flag for the right stakeholder, and you get the answer later.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-1-t4-p1">At some point, grill-me will hit a point where <strong class="text-amber-400">you don’t explain as well as the operator</strong> who does that every day. It’s not a failure — it’s information. It becomes a flag for the right stakeholder, and you get the answer later.</p>
 <div class="bg-dark-900 border border-amber-500/30 rounded-xl p-5 mb-6">
 <div class="flex items-center gap-2 mb-2"><span class="text-amber-400 font-semibold text-sm">Example to run</span><span class="text-xs text-neutral-500">— how to answer when you don’t know</span></div>
 <p class="text-xs text-neutral-400 mb-3"><strong>Objective:</strong> turn “I don’t know” into an actionable flag without blocking the session.</p>
@@ -328,15 +328,15 @@ afterward, and we'll update this brainstorm.</pessoa></pre></div>
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Search and return</div><p class="text-xs text-neutral-400">It brings the answer later.</p></div>
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Honesty</div><p class="text-xs text-neutral-400">Don’t make up what you don’t know.</p></div>
 </div>
-<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button"><span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Mark as read</span></button></div>
 </section>
 <!-- SEÇÃO 5 -->
-<section class="mb-16" data-inema-topic="modulo-4-1#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-1#topico-5" id="topico-5">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl flex-shrink-0">5</span><h2 class="text-2xl font-bold">🔄 Grill again</h2></div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t5-p1">How each session leaves a <strong class="text-amber-400">document</strong>, you can return to it when you discover something new. The brainstorm is alive: found a process improvement, solved a flag, changed your mind? Grill again and update it.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-1-t5-p1">How each session leaves a <strong class="text-amber-400">document</strong>, you can return to it when you discover something new. The brainstorm is alive: found a process improvement, solved a flag, changed your mind? Grill again and update it.</p>
 <div class="bg-dark-900 border border-amber-500/30 rounded-xl p-5 mb-6">
 <div class="flex items-center gap-2 mb-2"><span class="text-amber-400 font-semibold text-sm">Example to run</span><span class="text-xs text-neutral-500">— resume an existing brainstorm</span></div>
 <p class="text-xs text-neutral-400 mb-3"><strong>Objective:</strong> update an old brainstorm with new information and resolve flags.</p>
@@ -356,15 +356,15 @@ entradas afetadas) e me diga o que ficou diferente.</x></tabela></descobri></pre
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Resolves flags</div><p class="text-xs text-neutral-400">Closes what was open.</p></div>
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Same file</div><p class="text-xs text-neutral-400">Update, don't duplicate.</p></div>
 </div>
-<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button"><span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Mark as read</span></button></div>
 </section>
 <!-- SEÇÃO 6 -->
-<section class="mb-16" data-inema-topic="modulo-4-1#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-1#topico-6" id="topico-6">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl flex-shrink-0">6</span><h2 class="text-2xl font-bold">📦 From brainstorm to deliverable</h2></div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t6-p1">Capture is raw material, not the final product. The <strong class="text-amber-400">raw</strong> always stays in <code class="text-xs">brainstorms/</code>; when the session produces a polished deliverable—a plan, a map, a spec, a skill—that artifact can move to the corresponding project folder.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-1-t6-p1">Capture is raw material, not the final product. The <strong class="text-amber-400">raw</strong> always stays in <code class="text-xs">brainstorms/</code>; when the session produces a polished deliverable—a plan, a map, a spec, a skill—that artifact can move to the corresponding project folder.</p>
 <div class="space-y-6 mb-6">
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><span class="text-amber-400 font-bold">1</span></div>
@@ -385,15 +385,15 @@ entradas afetadas) e me diga o que ficou diferente.</x></tabela></descobri></pre
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Separation</div><p class="text-xs text-neutral-400">Raw ≠ deliverable.</p></div>
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Traceable</div><p class="text-xs text-neutral-400">The origin is recorded.</p></div>
 </div>
-<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button"><span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Mark as read</span></button></div>
 </section>
 <!-- SEÇÃO 7 -->
-<section class="mb-16" data-inema-topic="modulo-4-1#topico-7" id="topico-7">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-1#topico-7" id="topico-7">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl flex-shrink-0">7</span><h2 class="text-2xl font-bold">⚙️ Grill-me + skill-creator</h2></div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t7-p1">This is where the cycle closes. At the end of a session, grill-me realizes you have a <strong class="text-amber-400">skill and a doc</strong> with nuance that isn’t in them — and offers to update both. Combined with a <strong class="text-amber-400">skill-creator</strong>, is what takes a skill from ~70% to ~95%.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-1-t7-p1">This is where the cycle closes. At the end of a session, grill-me realizes you have a <strong class="text-amber-400">skill and a doc</strong> with nuance that isn’t in them — and offers to update both. Combined with a <strong class="text-amber-400">skill-creator</strong>, is what takes a skill from ~70% to ~95%.</p>
 <div class="rounded-2xl border border-amber-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="The extracted brainstorm plus skill-creator produce a much better skill: the captured nuance becomes an update to the skill and the doc" class="w-full h-auto" role="img" viewbox="0 0 1000 210">
 <defs>
@@ -426,15 +426,15 @@ entradas afetadas) e me diga o que ficou diferente.</x></tabela></descobri></pre
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">skill-creator</div><p class="text-xs text-neutral-400">Refines the result.</p></div>
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">70% → 95%</div><p class="text-xs text-neutral-400">The leap in quality.</p></div>
 </div>
-<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button"><span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Mark as read</span></button></div>
 </section>
 <!-- SEÇÃO 8 -->
-<section class="mb-16" data-inema-topic="modulo-4-1#topico-8" id="topico-8">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-4-1#topico-8" id="topico-8">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xl flex-shrink-0">8</span><h2 class="text-2xl font-bold">⛔ Anti-patterns</h2></div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Mark this topic as a question" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">I have a question</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m4-1-t8-p1">To wrap up, the mistakes that drain a grill-me session. Each one destroys one of the safeguards you learned in the previous tracks.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m4-1-t8-p1">To wrap up, the mistakes that drain a grill-me session. Each one destroys one of the safeguards you learned in the previous tracks.</p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
 <h4 class="font-bold text-red-400 mb-4">✗ Anti-patterns</h4>
@@ -465,7 +465,7 @@ entradas afetadas) e me diga o que ficou diferente.</x></tabela></descobri></pre
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Explore</div><p class="text-xs text-neutral-400">Before asking.</p></div>
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-amber-400 font-bold text-sm mb-1">Don’t stop early</div><p class="text-xs text-neutral-400">Cover every branch.</p></div>
 </div>
-<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Mark as read</span></button></div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 hover:bg-amber-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button"><span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Mark as read</span></button></div>
 </section>
 <!-- RESUMO -->
 <section class="mb-8">
@@ -492,7 +492,7 @@ entradas afetadas) e me diga o que ficou diferente.</x></tabela></descobri></pre
 </div>
 <footer class="border-t border-dark-600 py-8 mt-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>🔥 Grill Me — INEMA Course · 2026 · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+<p>🔥 Grill Me — ARCKHÉ Course · 2026 · <a class="text-sky-400 hover:text-sky-300" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a></p>
 </div>
 </footer>
 <script>
@@ -515,7 +515,7 @@ entradas afetadas) e me diga o que ficou diferente.</x></tabela></descobri></pre
       htmlEl.classList.toggle('dark');
       const isDark = htmlEl.classList.contains('dark');
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      try { var pr = JSON.parse(localStorage.getItem('inema.prefs')||'{}'); pr.theme = isDark ? 'inema-dark' : 'claro'; localStorage.setItem('inema.prefs', JSON.stringify(pr)); } catch(e){}
+      try { var pr = JSON.parse(localStorage.getItem('ARCKHÉ.prefs')||'{}'); pr.theme = isDark ? 'ARCKHÉ-dark' : 'claro'; localStorage.setItem('ARCKHÉ.prefs', JSON.stringify(pr)); } catch(e){}
       htmlEl.style.colorScheme = isDark ? 'dark' : 'light';
       if (isDark) htmlEl.removeAttribute('data-theme');
       syncThemeIcons();
@@ -525,6 +525,6 @@ entradas afetadas) e me diga o que ficou diferente.</x></tabela></descobri></pre
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   </script>
 <script src="../../../assets/learn.js"></script>
-<script>if (window.INEMA && typeof window.INEMA.init === 'function') window.INEMA.init();</script>
+<script>if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') window.ARCKHÉ.init();</script>
 </body>
 </html>

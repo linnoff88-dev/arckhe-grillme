@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="grillme" name="inema-course"/>
+<meta content="grillme" name="ARCKHÉ-course"/>
 <title>Módulo 3.1 · Anatomía del SKILL.md de grill-me | Grill Me</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "grillme",
     "tracks": [
@@ -29,29 +29,29 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
-        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='inema-dark'; }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHÉ-dark'; }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark:true,  attr:null,        cs:'dark'  },
+        'ARCKHÉ-dark': { dark:true,  attr:null,        cs:'dark'  },
         'claro':      { dark:false, attr:null,        cs:'light' },
         'sepia':      { dark:false, attr:'sepia',     cs:'light' },
         'foco':       { dark:null,  attr:'foco',      cs:null    },
         'contraste':  { dark:true,  attr:'contraste', cs:'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
       html.setAttribute('data-font', p.font || 'inter');
       html.setAttribute('data-accent', p.accent || 'emerald');
       var s = html.style, scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale/100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale/100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -129,11 +129,11 @@
     .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
     html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
 
-    .inema-toc-link.is-active { color: #c084fc; font-weight: 600; }
-    html:not(.dark) .inema-toc-link.is-active { color: #7c3aed; }
+    .ARCKHÉ-toc-link.is-active { color: #c084fc; font-weight: 600; }
+    html:not(.dark) .ARCKHÉ-toc-link.is-active { color: #7c3aed; }
   </style>
-<link href="https://inematds.github.io/grillme/curso/trilha3/modulo-3-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/grillme/en/curso/trilha3/modulo-3-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/grillme/es/curso/trilha3/modulo-3-1.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/modulo-3-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha3/modulo-3-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-3-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/modulo-3-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha3/modulo-3-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-3-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
 <a class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-dark-800 focus:rounded-lg" href="#conteudo">Saltar al contenido</a>
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -143,14 +143,14 @@
 <span class="text-2xl">🔥</span><span class="font-bold text-lg hidden sm:inline">Grill Me</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Técnicas</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10" href="index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">O Skill</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Avanzado</span></a>
-<button class="inline-flex items-center gap-1.5 px-2 sm:px-3 py-1.5 rounded-lg text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors text-sm ml-1" data-inema-journey-open="" type="button"><span aria-hidden="true">◷</span><span class="hidden sm:inline">Recorrido</span><span aria-hidden="true" class="inema-journey-badge hidden"></span></button>
+<button class="inline-flex items-center gap-1.5 px-2 sm:px-3 py-1.5 rounded-lg text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors text-sm ml-1" data-ARCKHÉ-journey-open="" type="button"><span aria-hidden="true">◷</span><span class="hidden sm:inline">Recorrido</span><span aria-hidden="true" class="ARCKHÉ-journey-badge hidden"></span></button>
 <button aria-label="Cambiar de tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
@@ -180,27 +180,27 @@
 </div>
 </header>
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:grid lg:grid-cols-[210px_1fr] lg:gap-10">
-<nav aria-label="Índice del módulo" class="hidden lg:block sticky top-24 self-start" data-inema-toc="">
-<p class="text-sm text-neutral-400 mb-3">Sección <span class="inema-toc-pos">1</span> de <span class="inema-toc-total">8</span></p>
+<nav aria-label="Índice del módulo" class="hidden lg:block sticky top-24 self-start" data-ARCKHÉ-toc="">
+<p class="text-sm text-neutral-400 mb-3">Sección <span class="ARCKHÉ-toc-pos">1</span> de <span class="ARCKHÉ-toc-total">8</span></p>
 <ul class="space-y-1.5 text-sm">
-<li><a class="inema-toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-1">1. Frontmatter</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-2">2. Versión de Pocock</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-3">3. Regla del checkpoint</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-4">4. Configuración del archivo</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-5">5. Estructura del capture</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-6">6. Simple vs. incrementado</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-7">7. Skill = prompt</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-8">8. Cerrar el ciclo</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-1">1. Frontmatter</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-2">2. Versión de Pocock</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-3">3. Regla del checkpoint</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-4">4. Configuración del archivo</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-5">5. Estructura del capture</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-6">6. Simple vs. incrementado</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-7">7. Skill = prompt</a></li>
+<li><a class="ARCKHÉ-toc-link text-neutral-400 hover:text-purple-400 transition-colors" href="#topico-8">8. Cerrar el ciclo</a></li>
 </ul>
 </nav>
-<main class="inema-prose min-w-0" id="conteudo">
+<main class="ARCKHÉ-prose min-w-0" id="conteudo">
 <!-- SEÇÃO 1 -->
-<section class="mb-16" data-inema-topic="modulo-3-1#topico-1" id="topico-1">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-1#topico-1" id="topico-1">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">1</span><h2 class="text-2xl font-bold">📛 Frontmatter: name + description</h2></div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-1-t1-p1">Todo skill empieza con un encabezado. En grill-me, ese <strong class="text-purple-400">frontmatter</strong> tiene dos campos: <code class="text-xs text-primary">name</code> e <code class="text-xs text-primary">description</code>. El secreto está en la description: es la que le enseña al modelo <em>cuando</em> cargar el skill.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-1-t1-p1">Todo skill empieza con un encabezado. En grill-me, ese <strong class="text-purple-400">frontmatter</strong> tiene dos campos: <code class="text-xs text-primary">name</code> e <code class="text-xs text-primary">description</code>. El secreto está en la description: es la que le enseña al modelo <em>cuando</em> cargar el skill.</p>
 <div class="bg-dark-800 border border-dark-600 rounded-xl p-4 mb-6">
 <p class="text-sm text-neutral-300"><span class="text-purple-400 font-semibold">¿Eres nuevo aquí?</span> <strong>Frontmatter</strong> es el bloque de metadatos al inicio de un archivo Markdown, entre líneas de <code class="text-xs">---</code>. Un <strong>disparador</strong> (o <em>trigger</em>) es una situación que debería hacer que se active el skill.</p>
 </div>
@@ -225,15 +225,15 @@ description: Interview the user relentlessly about a plan, design,
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-purple-400 font-bold text-sm mb-1">Situacional</div><p class="text-xs text-neutral-400">"Cuándo" &gt; "qué es".</p></div>
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-purple-400 font-bold text-sm mb-1">Puerta de entrada</div><p class="text-xs text-neutral-400">Sin ella, nadie entra.</p></div>
 </div>
-<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como leído</span></button></div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button"><span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Marcar como leído</span></button></div>
 </section>
 <!-- SEÇÃO 2 -->
-<section class="mb-16" data-inema-topic="modulo-3-1#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-1#topico-2" id="topico-2">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">2</span><h2 class="text-2xl font-bold">✍️ La versión original de Matt Pocock</h2></div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-1-t2-p1">El skill original, creado por <strong class="text-purple-400">Matt Pocock</strong>, es desconcertantemente simple: cuatro o cinco frases. Demuestra que un skill no necesita automatización, sino instrucciones adecuadas.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-1-t2-p1">El skill original, creado por <strong class="text-purple-400">Matt Pocock</strong>, es desconcertantemente simple: cuatro o cinco frases. Demuestra que un skill no necesita automatización, sino instrucciones adecuadas.</p>
 <div class="bg-dark-900 border border-dark-600 rounded-xl p-5 mb-6 overflow-x-auto">
 <div class="flex items-center gap-2 mb-3"><span class="w-3 h-3 rounded-full bg-red-400"></span><span class="w-3 h-3 rounded-full bg-yellow-400"></span><span class="w-3 h-3 rounded-full bg-emerald-400"></span><span class="text-xs text-neutral-500 ml-2">el cuerpo, en esencia (recreación ilustrativa)</span></div>
 <pre class="font-mono text-xs text-neutral-300 leading-relaxed">Entrevístame sin piedad sobre cada aspecto de este plan hasta
@@ -260,15 +260,15 @@ explora el codebase en vez de preguntar.</pre>
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-purple-400 font-bold text-sm mb-1">Ya está completo</div><p class="text-xs text-neutral-400">Todo el método cabe ahí.</p></div>
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-purple-400 font-bold text-sm mb-1">Base</div><p class="text-xs text-neutral-400">El resto son añadidos.</p></div>
 </div>
-<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como leído</span></button></div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button"><span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Marcar como leído</span></button></div>
 </section>
 <!-- SEÇÃO 3 -->
-<section class="mb-16" data-inema-topic="modulo-3-1#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-1#topico-3" id="topico-3">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">3</span><h2 class="text-2xl font-bold">🚫 La regla del checkpoint</h2></div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-1-t3-p1">Aquí está el añadido que define la versión práctica: la <strong class="text-purple-400">regla del checkpoint</strong>, marcada como <em>no negociable</em>. Después de cada respuesta, antes de la próxima pregunta, el skill agrega contenido al archivo.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-1-t3-p1">Aquí está el añadido que define la versión práctica: la <strong class="text-purple-400">regla del checkpoint</strong>, marcada como <em>no negociable</em>. Después de cada respuesta, antes de la próxima pregunta, el skill agrega contenido al archivo.</p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
 <h4 class="font-bold text-emerald-400 mb-4">✓ La regla indica</h4>
@@ -297,15 +297,15 @@ explora el codebase en vez de preguntar.</pre>
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-purple-400 font-bold text-sm mb-1">Corregir el pasado</div><p class="text-xs text-neutral-400">Conciliar entradas.</p></div>
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-purple-400 font-bold text-sm mb-1">Promesa</div><p class="text-xs text-neutral-400">Nada se pierde.</p></div>
 </div>
-<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como leído</span></button></div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button"><span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Marcar como leído</span></button></div>
 </section>
 <!-- SEÇÃO 4 -->
-<section class="mb-16" data-inema-topic="modulo-3-1#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-1#topico-4" id="topico-4">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">4</span><h2 class="text-2xl font-bold">📁 Configuración: brainstorms/ y el archivo de captura</h2></div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-1-t4-p1">La regla de oro de la configuración: <strong class="text-purple-400">crear el archivo ANTES de la primera pregunta.</strong> Así, incluso la primera respuesta ya tiene dónde quedar.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-1-t4-p1">La regla de oro de la configuración: <strong class="text-purple-400">crear el archivo ANTES de la primera pregunta.</strong> Así, incluso la primera respuesta ya tiene dónde quedar.</p>
 <div class="bg-dark-800 border border-dark-600 rounded-xl p-4 mb-6">
 <p class="text-sm text-neutral-300"><span class="text-purple-400 font-semibold">¿Eres nuevo aquí?</span> Uno <strong>slug</strong> es una versión corta y sin espacios de un título, usada en el nombre de un archivo (p. ej., «empaque de productos» → <code class="text-xs">packaging</code>).</p>
 </div>
@@ -335,15 +335,15 @@ explora el codebase en vez de preguntar.</pre>
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-purple-400 font-bold text-sm mb-1">Fecha + slug</div><p class="text-xs text-neutral-400">Nombre consistente.</p></div>
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-purple-400 font-bold text-sm mb-1">Avisar dónde</div><p class="text-xs text-neutral-400">Transparencia.</p></div>
 </div>
-<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como leído</span></button></div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button"><span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Marcar como leído</span></button></div>
 </section>
 <!-- SEÇÃO 5 -->
-<section class="mb-16" data-inema-topic="modulo-3-1#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-1#topico-5" id="topico-5">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">5</span><h2 class="text-2xl font-bold">🗂️ Estructura del archivo de captura</h2></div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-1-t5-p1">El archivo tiene una estructura fija de cuatro bloques. Esa estructura es lo que lo hace <strong class="text-purple-400">rastreable</strong> y es fácil convertirlo en un entregable después.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-1-t5-p1">El archivo tiene una estructura fija de cuatro bloques. Esa estructura es lo que lo hace <strong class="text-purple-400">rastreable</strong> y es fácil convertirlo en un entregable después.</p>
 <div class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="La estructura del capture file: un archivo contiene cuatro bloques: header, summary de decisiones, log de preguntas y respuestas, y la lista de flags pendientes" class="w-full h-auto" role="img" viewbox="0 0 1000 240">
 <defs>
@@ -396,15 +396,15 @@ Date: {date} · Goal: {uma linha}
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-purple-400 font-bold text-sm mb-1">Registro de preguntas y respuestas</div><p class="text-xs text-neutral-400">En sus palabras.</p></div>
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-purple-400 font-bold text-sm mb-1">Open flags</div><p class="text-xs text-neutral-400">Elemento → responsable.</p></div>
 </div>
-<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como leído</span></button></div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button"><span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Marcar como leído</span></button></div>
 </section>
 <!-- SEÇÃO 6 -->
-<section class="mb-16" data-inema-topic="modulo-3-1#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-1#topico-6" id="topico-6">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">6</span><h2 class="text-2xl font-bold">🔁 Simple vs. iterativo</h2></div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-1-t6-p1">¿Por qué "estropear" un skill que ya funcionaba? Porque en las entrevistas largas la <strong class="text-purple-400">se llena la ventana de contexto</strong> y el modelo empieza a olvidar lo que se dijo al inicio. La versión incrementada cambia simplicidad por robustez.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-1-t6-p1">¿Por qué "estropear" un skill que ya funcionaba? Porque en las entrevistas largas la <strong class="text-purple-400">se llena la ventana de contexto</strong> y el modelo empieza a olvidar lo que se dijo al inicio. La versión incrementada cambia simplicidad por robustez.</p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-dark-800 border border-dark-600 rounded-xl p-6">
 <h4 class="font-bold text-purple-400 mb-4">Versión simple (Pocock)</h4>
@@ -433,15 +433,15 @@ Date: {date} · Goal: {uma linha}
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-purple-400 font-bold text-sm mb-1">Robustez</div><p class="text-xs text-neutral-400">Soporta sesiones largas.</p></div>
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-purple-400 font-bold text-sm mb-1">Problema real</div><p class="text-xs text-neutral-400">Automatizar lo repetido.</p></div>
 </div>
-<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como leído</span></button></div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button"><span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Marcar como leído</span></button></div>
 </section>
 <!-- SEÇÃO 7 -->
-<section class="mb-16" data-inema-topic="modulo-3-1#topico-7" id="topico-7">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-1#topico-7" id="topico-7">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">7</span><h2 class="text-2xl font-bold">💡 Skill = prompt que no quieres repetir</h2></div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-1-t7-p1">Quizás la lección más liberadora de esta ruta: un skill <strong class="text-purple-400">no hace falta</strong> ser una automatización compleja. Puede ser simplemente un prompt que te cansaste de escribir cada vez. El grill-me es exactamente eso.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-1-t7-p1">Quizás la lección más liberadora de esta ruta: un skill <strong class="text-purple-400">no hace falta</strong> ser una automatización compleja. Puede ser simplemente un prompt que te cansaste de escribir cada vez. El grill-me es exactamente eso.</p>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🧭</span> Cómo reconocer a un candidato a skill</h3>
 <ul class="space-y-2 text-neutral-300 text-sm">
@@ -460,15 +460,15 @@ Date: {date} · Goal: {uma linha}
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-purple-400 font-bold text-sm mb-1">Lo repetible</div><p class="text-xs text-neutral-400">Captura lo que se repite.</p></div>
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-purple-400 font-bold text-sm mb-1">Barrera baja</div><p class="text-xs text-neutral-400">Cualquiera puede crear.</p></div>
 </div>
-<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como leído</span></button></div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button"><span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Marcar como leído</span></button></div>
 </section>
 <!-- SEÇÃO 8 -->
-<section class="mb-16" data-inema-topic="modulo-3-1#topico-8" id="topico-8">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-1#topico-8" id="topico-8">
 <div class="flex items-start justify-between gap-3 mb-6">
 <div class="flex items-center space-x-4"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl flex-shrink-0">8</span><h2 class="text-2xl font-bold">🔗 Actualizar las skills y la documentación al final</h2></div>
-<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
+<button aria-pressed="false" class="flex-shrink-0 inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-ARCKHÉ-doubt-toggle="" title="Marcar una duda en este tema" type="button"><span aria-hidden="true">?</span><span class="hidden sm:inline">Tengo una duda</span></button>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-1-t8-p1">La sesión no termina con el resumen. grill-me se da cuenta de que hay una guía o skill relacionada —con un matiz que acaban de discutir y que no está ahí— y <strong class="text-purple-400">ofrece actualizar ambos</strong>. Así es como el output retroalimenta tu OS.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-1-t8-p1">La sesión no termina con el resumen. grill-me se da cuenta de que hay una guía o skill relacionada —con un matiz que acaban de discutir y que no está ahí— y <strong class="text-purple-400">ofrece actualizar ambos</strong>. Así es como el output retroalimenta tu OS.</p>
 <div class="space-y-6 mb-6">
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">1</span></div>
@@ -489,7 +489,7 @@ Date: {date} · Goal: {uma linha}
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-purple-400 font-bold text-sm mb-1">Retroalimenta el OS</div><p class="text-xs text-neutral-400">Output → contexto.</p></div>
 <div class="bg-dark-800 border border-dark-600 rounded-lg p-4"><div class="text-purple-400 font-bold text-sm mb-1">Ciclo cerrado</div><p class="text-xs text-neutral-400">Conversación → mejora.</p></div>
 </div>
-<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button"><span aria-hidden="true" class="inema-read-icon">○</span><span class="inema-read-label">Marcar como leído</span></button></div>
+<div class="flex justify-start mt-6"><button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-ARCKHÉ-read-toggle="" type="button"><span aria-hidden="true" class="ARCKHÉ-read-icon">○</span><span class="ARCKHÉ-read-label">Marcar como leído</span></button></div>
 </section>
 <!-- RESUMO -->
 <section class="mb-8">
@@ -516,7 +516,7 @@ Date: {date} · Goal: {uma linha}
 </div>
 <footer class="border-t border-dark-600 py-8 mt-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>🔥 Grill Me — Curso INEMA · 2026 · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+<p>🔥 Grill Me — Curso ARCKHÉ · 2026 · <a class="text-sky-400 hover:text-sky-300" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a></p>
 </div>
 </footer>
 <script>
@@ -539,7 +539,7 @@ Date: {date} · Goal: {uma linha}
       htmlEl.classList.toggle('dark');
       const isDark = htmlEl.classList.contains('dark');
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      try { var pr = JSON.parse(localStorage.getItem('inema.prefs')||'{}'); pr.theme = isDark ? 'inema-dark' : 'claro'; localStorage.setItem('inema.prefs', JSON.stringify(pr)); } catch(e){}
+      try { var pr = JSON.parse(localStorage.getItem('ARCKHÉ.prefs')||'{}'); pr.theme = isDark ? 'ARCKHÉ-dark' : 'claro'; localStorage.setItem('ARCKHÉ.prefs', JSON.stringify(pr)); } catch(e){}
       htmlEl.style.colorScheme = isDark ? 'dark' : 'light';
       if (isDark) htmlEl.removeAttribute('data-theme');
       syncThemeIcons();
@@ -549,6 +549,6 @@ Date: {date} · Goal: {uma linha}
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   </script>
 <script src="../../../assets/learn.js"></script>
-<script>if (window.INEMA && typeof window.INEMA.init === 'function') window.INEMA.init();</script>
+<script>if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') window.ARCKHÉ.init();</script>
 </body>
 </html>

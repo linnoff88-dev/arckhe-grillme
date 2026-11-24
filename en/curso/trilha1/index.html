@@ -4,9 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="grillme" name="inema-course"/>
+<meta content="grillme" name="ARCKHÉ-course"/>
 <title>Track 1 · Fundamentals | Grill Me</title>
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
   {
     "course": "grillme",
     "tracks": [
@@ -29,29 +29,29 @@
   (function () {
     try {
       var html = document.documentElement;
-      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
       function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
       var p = clone(DEF);
       try {
-        var raw = localStorage.getItem('inema.prefs');
+        var raw = localStorage.getItem('ARCKHÉ.prefs');
         if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
-        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='inema-dark'; }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='ARCKHÉ-dark'; }
       } catch (e) { p = clone(DEF); }
       var THEMES = {
-        'inema-dark': { dark:true,  attr:null,        cs:'dark'  },
+        'ARCKHÉ-dark': { dark:true,  attr:null,        cs:'dark'  },
         'claro':      { dark:false, attr:null,        cs:'light' },
         'sepia':      { dark:false, attr:'sepia',     cs:'light' },
         'foco':       { dark:null,  attr:'foco',      cs:null    },
         'contraste':  { dark:true,  attr:'contraste', cs:'dark'  }
       };
-      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
       if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
       if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
       html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
       html.setAttribute('data-font', p.font || 'inter');
       html.setAttribute('data-accent', p.accent || 'emerald');
       var s = html.style, scale = (+p.fontScale || 100);
-      s.setProperty('--inema-font-scale', (scale/100).toString());
+      s.setProperty('--ARCKHÉ-font-scale', (scale/100).toString());
       s.setProperty('font-size', scale + '%');
       s.setProperty('--measure', (+p.lineWidth || 68) + 'ch');
       s.setProperty('--lh-body', (+p.leading || 1.7).toString());
@@ -129,8 +129,8 @@
       .gm-a:nth-child(2){animation-delay:.3s} .gm-a:nth-child(3){animation-delay:.6s}
     }
   </style>
-<link href="https://inematds.github.io/grillme/curso/trilha1/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/grillme/en/curso/trilha1/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/grillme/es/curso/trilha1/" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha1/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<link href="https://linnoff88-dev.github.io/ hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/ hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="ARCKHÉ-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha1/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <a class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-dark-800 focus:rounded-lg" href="#conteudo">Skip to content</a>
 <!-- NAVIGATION (T1 ativa) -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
@@ -142,7 +142,7 @@
 <span class="font-bold text-lg hidden sm:inline">Grill Me</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html">
@@ -157,9 +157,9 @@
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors" href="../trilha4/index.html">
 <span class="sm:hidden">T4</span><span class="hidden sm:inline">Advanced</span>
 </a>
-<button class="inline-flex items-center gap-1.5 px-2 sm:px-3 py-1.5 rounded-lg text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors text-sm ml-1" data-inema-journey-open="" type="button">
+<button class="inline-flex items-center gap-1.5 px-2 sm:px-3 py-1.5 rounded-lg text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors text-sm ml-1" data-ARCKHÉ-journey-open="" type="button">
 <span aria-hidden="true">◷</span><span class="hidden sm:inline">Journey</span>
-<span aria-hidden="true" class="inema-journey-badge hidden"></span>
+<span aria-hidden="true" class="ARCKHÉ-journey-badge hidden"></span>
 </button>
 <button aria-label="Switch topics" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -179,7 +179,7 @@
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">1</div><div class="text-xs text-neutral-400">Module</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">8</div><div class="text-xs text-neutral-400">Topics</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">~45min</div><div class="text-xs text-neutral-400">Duration</div></div>
-<div aria-label="Track 1 progress" aria-valuemax="100" aria-valuemin="0" class="bg-dark-800/50 rounded-lg p-3 border border-dark-600" data-inema-meter="trilha:1" role="progressbar"><div class="text-xl font-bold text-emerald-400 inema-meter-pct">0%</div><div class="text-xs text-neutral-400 inema-meter-count">0 of 8</div></div>
+<div aria-label="Track 1 progress" aria-valuemax="100" aria-valuemin="0" class="bg-dark-800/50 rounded-lg p-3 border border-dark-600" data-ARCKHÉ-meter="trilha:1" role="progressbar"><div class="text-xl font-bold text-emerald-400 ARCKHÉ-meter-pct">0%</div><div class="text-xs text-neutral-400 ARCKHÉ-meter-count">0 of 8</div></div>
 </div>
 </div>
 </header>
@@ -228,7 +228,7 @@
 </section>
 <h2 class="text-2xl font-bold mb-6">Detailed content</h2>
 <!-- CARD DO MÓDULO 1.1 -->
-<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="1-1" data-inema-track="1" id="modulo-1-1">
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-ARCKHÉ-module="1-1" data-ARCKHÉ-track="1" id="modulo-1-1">
 <div class="p-6 border-b border-dark-600">
 <div class="flex items-center justify-between mb-2">
 <span class="text-emerald-400 font-bold">1.1</span>
@@ -236,9 +236,9 @@
 </div>
 <h3 class="text-2xl font-bold mb-2">🧠 Why Context Extraction Is the Whole Game</h3>
 <p class="text-neutral-400 text-sm">The conceptual foundation: why the model has become a commodity, what tacit knowledge is, why a brain dump fails, and what makes grill-me worthwhile.</p>
-<div aria-label="Module 1.1 progress" aria-valuemax="100" aria-valuemin="0" class="mt-4 max-w-xs" data-inema-meter="modulo:1-1" role="progressbar">
-<div class="flex items-center justify-between text-xs mb-1"><span class="text-neutral-400 inema-meter-count">0 of 8 read</span><span class="text-emerald-400 font-semibold inema-meter-pct">0%</span></div>
-<div class="h-1.5 rounded-full bg-dark-600 overflow-hidden"><div class="inema-meter-bar h-full bg-emerald-500" style="width:0%"></div></div>
+<div aria-label="Module 1.1 progress" aria-valuemax="100" aria-valuemin="0" class="mt-4 max-w-xs" data-ARCKHÉ-meter="modulo:1-1" role="progressbar">
+<div class="flex items-center justify-between text-xs mb-1"><span class="text-neutral-400 ARCKHÉ-meter-count">0 of 8 read</span><span class="text-emerald-400 font-semibold ARCKHÉ-meter-pct">0%</span></div>
+<div class="h-1.5 rounded-full bg-dark-600 overflow-hidden"><div class="ARCKHÉ-meter-bar h-full bg-emerald-500" style="width:0%"></div></div>
 </div>
 </div>
 <div class="divide-y divide-dark-600">
@@ -386,7 +386,7 @@
 </div>
 <footer class="border-t border-dark-600 py-8 mt-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>🔥 Grill Me — INEMA Course · 2026 · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+<p>🔥 Grill Me — ARCKHÉ Course · 2026 · <a class="text-sky-400 hover:text-sky-300" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a></p>
 </div>
 </footer>
 <script>
@@ -409,7 +409,7 @@
       htmlEl.classList.toggle('dark');
       const isDark = htmlEl.classList.contains('dark');
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      try { var pr = JSON.parse(localStorage.getItem('inema.prefs')||'{}'); pr.theme = isDark ? 'inema-dark' : 'claro'; localStorage.setItem('inema.prefs', JSON.stringify(pr)); } catch(e){}
+      try { var pr = JSON.parse(localStorage.getItem('ARCKHÉ.prefs')||'{}'); pr.theme = isDark ? 'ARCKHÉ-dark' : 'claro'; localStorage.setItem('ARCKHÉ.prefs', JSON.stringify(pr)); } catch(e){}
       htmlEl.style.colorScheme = isDark ? 'dark' : 'light';
       if (isDark) htmlEl.removeAttribute('data-theme');
       syncThemeIcons();
@@ -419,6 +419,6 @@
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   </script>
 <script src="../../../assets/learn.js"></script>
-<script>if (window.INEMA && typeof window.INEMA.init === 'function') window.INEMA.init();</script>
+<script>if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') window.ARCKHÉ.init();</script>
 </body>
 </html>
