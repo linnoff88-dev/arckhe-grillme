@@ -1,4 +1,4 @@
-# ðŸ”¥ Grill Me â€” Curso ARCKHÉ
+# ê°Å¸âÂ¥ Grill Me ê¢â¬â Curso ARCKHê
 
 <div align="center">
   <img src="capa/logo.svg" alt="Arckhé AI" height="48" />
@@ -6,24 +6,24 @@
 </div>
 
 
-Curso sobre o skill **grill-me**: como extrair o que estÃ¡ na sua cabeÃ§a para o seu sistema de IA.
+Curso sobre o skill **grill-me**: como extrair o que estêÂ¡ na sua cabeêÂ§a para o seu sistema de IA.
 
-O modelo Ã© igual pra todos â€” sua vantagem Ã© o **contexto**. O grill-me te entrevista sem dÃ³, uma pergunta de cada vez, salvando cada resposta em disco (o *capture file*), atÃ© que tudo que estava na sua cabeÃ§a vire um documento reutilizÃ¡vel.
+O modelo êÂ© igual pra todos ê¢â¬â sua vantagem êÂ© o **contexto**. O grill-me te entrevista sem dêÂ³, uma pergunta de cada vez, salvando cada resposta em disco (o *capture file*), atêÂ© que tudo que estava na sua cabeêÂ§a vire um documento reutilizêÂ¡vel.
 
 ## Trilhas
 
-1. **ðŸ§  Fundamentos** â€” por que extrair contexto Ã© o jogo todo.
-2. **ðŸŽ¤ As TÃ©cnicas** â€” anatomia de uma entrevista relentless.
-3. **ðŸ› ï¸ O Skill** â€” anatomia do `SKILL.md` do grill-me.
-4. **ðŸŽ¯ AvanÃ§ado** â€” prompts para aplicar e a dificuldade de responder.
+1. **ê°Å¸Â§Â  Fundamentos** ê¢â¬â por que extrair contexto êÂ© o jogo todo.
+2. **ê°Å¸Å½Â¤ As TêÂ©cnicas** ê¢â¬â anatomia de uma entrevista relentless.
+3. **ê°Å¸âºÂ ê¯Â¸Â O Skill** ê¢â¬â anatomia do `SKILL.md` do grill-me.
+4. **ê°Å¸Å½Â¯ AvanêÂ§ado** ê¢â¬â prompts para aplicar e a dificuldade de responder.
 
-PÃ¡gina Ãºnica, self-contained (HTML + Tailwind via CDN + camada de aprendizagem ARCKHÉ v2: progresso, marcar-lido, dÃºvida, anotaÃ§Ãµes, "minha jornada", temas).
+PêÂ¡gina êÂºnica, self-contained (HTML + Tailwind via CDN + camada de aprendizagem ARCKHê v2: progresso, marcar-lido, dêÂºvida, anotaêÂ§êÂµes, "minha jornada", temas).
 
-Abra `index.html` no navegador ou acesse a versÃ£o publicada.
+Abra `index.html` no navegador ou acesse a versêÂ£o publicada.
 
-Baseado no skill **grill-me** (Matt Pocock) e na variaÃ§Ã£o com checkpointing.
+Baseado no skill **grill-me** (Matt Pocock) e na variaêÂ§êÂ£o com checkpointing.
 
-â€” [ARCKHÉ AI](https://ARCKHÉ AI)
+ê¢â¬â [ARCKHê AI](https://ARCKHê AI)
 
 ---
 
